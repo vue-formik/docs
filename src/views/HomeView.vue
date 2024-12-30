@@ -10,7 +10,7 @@
             type="text"
             id="name"
             name="name"
-            v-model="formik.values.name"
+            :value="formik.values.name"
             @input="formik.handleChange"
             @blur="formik.handleBlur"
             :class="{
@@ -18,7 +18,7 @@
             }"
           />
           <p v-if="formik.hasFieldError('name')" class="form-field--error">
-            {{ formik.getFieldError('name') }}
+            {{ formik.getFieldError("name") }}
           </p>
         </div>
 
@@ -32,11 +32,11 @@
             @input="formik.handleChange"
             @blur="formik.handleBlur"
             :class="{
-              error: formik.hasFieldError('name'),
+              error: formik.hasFieldError('email'),
             }"
           />
           <p v-if="formik.hasFieldError('email')" class="form-field--error">
-            {{ formik.getFieldError('email') }}
+            {{ formik.getFieldError("email") }}
           </p>
         </div>
 
@@ -50,11 +50,11 @@
             @input="formik.handleChange"
             @blur="formik.handleBlur"
             :class="{
-              error: formik.hasFieldError('name'),
+              error: formik.hasFieldError('phone'),
             }"
           />
           <p v-if="formik.hasFieldError('phone')" class="form-field--error">
-            {{ formik.getFieldError('phone') }}
+            {{ formik.getFieldError("phone") }}
           </p>
         </div>
 
@@ -103,49 +103,49 @@
   </section>
 </template>
 <script setup lang="ts">
-import { useFormik } from 'vue-formik'
+import { useFormik } from "vue-formik";
 
 const sexOptions = [
-  { label: 'Male', value: 'M' },
-  { label: 'Female', value: 'F' },
-  { label: 'Other', value: 'O' },
-  { label: 'Prefer not to say', value: 'N/A' },
-]
+  { label: "Male", value: "M" },
+  { label: "Female", value: "F" },
+  { label: "Other", value: "O" },
+  { label: "Prefer not to say", value: "N/A" },
+];
 
 const formik = useFormik({
   initialValues: {
-    name: '',
-    email: '',
-    phone: '',
-    sex: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    sex: "",
+    message: "",
   },
   validationSchema: {
     name: (value: string) => {
       if (!value) {
-        return 'Name is required'
+        return "Name is required";
       }
     },
     email: (value: string) => {
       if (!value) {
-        return 'Email is required'
+        return "Email is required";
       }
-      if (!value.includes('@')) {
-        return 'Invalid email'
+      if (!value.includes("@")) {
+        return "Invalid email";
       }
     },
     phone: (value: string) => {
       if (!value) {
-        return 'Phone is required'
+        return "Phone is required";
       }
       if (!/^\d{10}$/.test(value)) {
-        return 'Invalid phone number. Must be 10 digits'
+        return "Invalid phone number. Must be 10 digits";
       }
     },
   },
   onSubmit(values, helpers) {
-    console.log('Form submitted', values)
-    helpers.reset()
+    console.log("Form submitted", values);
+    helpers.reset();
   },
-})
+});
 </script>

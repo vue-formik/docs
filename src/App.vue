@@ -8,8 +8,8 @@
   </section>
 </template>
 <script setup lang="ts">
-import TheAppbar from '@/components/TheAppbar.vue'
-import TheFooter from '@/components/TheFooter.vue'
+import TheAppbar from "@/components/TheAppbar.vue";
+import TheFooter from "@/components/TheFooter.vue";
 </script>
 <style lang="sass">
 .app_section
