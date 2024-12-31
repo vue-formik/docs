@@ -14,26 +14,27 @@
 
         <FormTextField
           :formik="formik"
+          name="email"
+          label="Email Address:"
+          type="email"
+          placeholder="Enter your email address"
+        />
+
+        <FormTextField
+          :formik="formik"
           name="phone"
           label="Phone:"
           type="tel"
           placeholder="Enter your phone number"
         />
 
-        <div class="v-formik--field">
-          <label for="sex"> Gender: </label>
-          <select
-            id="sex"
-            name="sex"
-            v-model="formik.values.sex"
-            @input="formik.handleChange"
-            @blur="formik.handleBlur"
-          >
-            <option v-for="option in sexOptions" :key="option.value" :value="option.value">
-              {{ option.label }}
-            </option>
-          </select>
-        </div>
+        <FormSelectField
+          :formik="formik"
+          name="sex"
+          label="Sex:"
+          :options="sexOptions"
+          placeholder="Select your gender"
+        />
 
         <FormTextArea
           :formik="formik"
@@ -59,10 +60,23 @@
           }, null, 2) }}</code></pre>
       </div>
     </div>
+
+    <p class="py-2 text-sm">
+      <span> You can find the source code for this example on </span>
+      <a
+        href="https://github.com/vue-formik/docs/blob/main/src/views/HomeView.vue"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 underline"
+      >
+        GitHub
+      </a>
+      <span>.</span>
+    </p>
   </section>
 </template>
 <script setup lang="ts">
-import { useFormik, FormTextField, FormTextArea } from "vue-formik";
+import { useFormik, FormTextField, FormTextArea, FormSelectField } from "vue-formik";
 import { onBeforeMount } from "vue";
 
 const sexOptions = [
