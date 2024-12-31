@@ -1,7 +1,10 @@
 <template>
   <footer class="app_footer">
     <p>
-      <span>Made with ❤️ by <a href="https://kiranparajuli.com.np">Kiran Parajuli</a></span>
+      <span>
+        Made with ❤️ by
+        <a class="text-yellow-100 underline" href="https://kiranparajuli.com.np"> Kiran Parajuli</a>
+      </span>
       <span class="px-2">.</span>
       <span>© {{ currentYear }} Vue Formik</span>
     </p>

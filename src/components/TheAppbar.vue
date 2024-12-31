@@ -3,7 +3,7 @@
     <img src="/logo.png" alt="Logo" />
     <h1>Vue Formik</h1>
     <div class="grow" />
-    <a href="https://github.com/vue-formik/docs" target="_blank"> ⭐ Star us on GitHub </a>
+    <a href="https://github.com/vue-formik/vue-formik" target="_blank"> ⭐ Star us on GitHub </a>
   </nav>
 </template>
 <style lang="sass">
