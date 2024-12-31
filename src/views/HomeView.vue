@@ -4,61 +4,23 @@
     <hr class="mb-6" />
     <div class="home-view__content">
       <form class="border rounded-md p-4" @submit="formik.handleSubmit">
-        <div class="form-field">
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            :value="formik.values.name"
-            @input="formik.handleChange"
-            @blur="formik.handleBlur"
-            :class="{
-              error: formik.hasFieldError('name'),
-            }"
-          />
-          <p v-if="formik.hasFieldError('name')" class="form-field--error">
-            {{ formik.getFieldError("name") }}
-          </p>
-        </div>
+        <FormTextField
+          :formik="formik"
+          name="name"
+          label="Name:"
+          type="text"
+          placeholder="Enter your name"
+        />
 
-        <div class="form-field">
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            v-model="formik.values.email"
-            @input="formik.handleChange"
-            @blur="formik.handleBlur"
-            :class="{
-              error: formik.hasFieldError('email'),
-            }"
-          />
-          <p v-if="formik.hasFieldError('email')" class="form-field--error">
-            {{ formik.getFieldError("email") }}
-          </p>
-        </div>
+        <FormTextField
+          :formik="formik"
+          name="phone"
+          label="Phone:"
+          type="tel"
+          placeholder="Enter your phone number"
+        />
 
-        <div class="form-field">
-          <label for="phone">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            v-model="formik.values.phone"
-            @input="formik.handleChange"
-            @blur="formik.handleBlur"
-            :class="{
-              error: formik.hasFieldError('phone'),
-            }"
-          />
-          <p v-if="formik.hasFieldError('phone')" class="form-field--error">
-            {{ formik.getFieldError("phone") }}
-          </p>
-        </div>
-
-        <div class="form-field">
+        <div class="v-formik--field">
           <label for="sex"> Gender: </label>
           <select
             id="sex"
@@ -73,16 +35,13 @@
           </select>
         </div>
 
-        <div class="form-field">
-          <label for="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            v-model="formik.values.message"
-            @input="formik.handleChange"
-            @blur="formik.handleBlur"
-          />
-        </div>
+        <FormTextArea
+          :formik="formik"
+          name="message"
+          label="Message:"
+          placeholder="Enter your message"
+          rows="4"
+        />
 
         <br />
 
@@ -103,7 +62,8 @@
   </section>
 </template>
 <script setup lang="ts">
-import { useFormik } from "vue-formik";
+import { useFormik, FormTextField, FormTextArea } from "vue-formik";
+import { onBeforeMount } from "vue";
 
 const sexOptions = [
   { label: "Male", value: "M" },
@@ -148,4 +108,37 @@ const formik = useFormik({
     helpers.reset();
   },
 });
+
+onBeforeMount(() => {
+  document.title = "Home | Vue Formik";
+});
 </script>
+<style lang="scss">
+.v-formik {
+  &--field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &--input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+
+    &--error {
+      border: 1px solid red;
+
+      &:focus,
+      &:focus-visible,
+      &:focus-within {
+        outline: 1px solid red;
+      }
+    }
+  }
+  &--error {
+    color: red;
+    font-size: 0.875rem;
+  }
+}
+</style>

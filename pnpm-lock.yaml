@@ -15,8 +15,8 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
       vue-formik:
-        specifier: ^0.1.3
-        version: 0.1.3(typescript@5.6.3)
+        specifier: ^0.1.8
+        version: 0.1.8(typescript@5.6.3)
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.6.3))
@@ -2645,8 +2645,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  vue-formik@0.1.3:
-    resolution: {integrity: sha512-P5RYIVBil44QnJI0YKxFH6wPtFDGnx4Ga4iEE1DyAt6C4p8bnFvZxFhqfCvH6o8n3Ns+9j36hgjLgQbCYw0Ezw==}
+  vue-formik@0.1.8:
+    resolution: {integrity: sha512-VqhfkSQ2koC5tXPdjhvc44rt+OP23ESWAvRrg35LJRj/vp5XqOXct92OGLqAzG97+sxMmRMtwC2Yx2sko5C1CQ==}
 
   vue-router@4.5.0:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
@@ -5160,7 +5160,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-formik@0.1.3(typescript@5.6.3):
+  vue-formik@0.1.8(typescript@5.6.3):
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
     transitivePeerDependencies:
