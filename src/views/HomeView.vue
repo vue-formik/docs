@@ -4,7 +4,7 @@
     <hr class="mb-6" />
     <div class="home-view__content">
       <form class="border rounded-md p-4" @submit="formik.handleSubmit">
-        <FormTextField
+        <FormInput
           :formik="formik"
           name="name"
           label="Name:"
@@ -12,7 +12,7 @@
           placeholder="Enter your name"
         />
 
-        <FormTextField
+        <FormInput
           :formik="formik"
           name="email"
           label="Email Address:"
@@ -20,7 +20,7 @@
           placeholder="Enter your email address"
         />
 
-        <FormTextField
+        <FormInput
           :formik="formik"
           name="phone"
           label="Phone:"
@@ -44,14 +44,64 @@
           rows="4"
         />
 
+        <!-- addresses -->
+        <div class="addresses flex flex-col gap-2">
+          <div>Addresses:</div>
+          <div
+            class="flex items-start gap-4"
+            v-for="(_, index) in formik.values.addresses"
+            :key="index"
+          >
+            <FormInput
+              :formik="formik"
+              :name="`addresses.${index}`"
+              type="text"
+              :placeholder="`Enter address line ${index + 1}`"
+            />
+
+            <button
+              type="button"
+              @click="
+                () => {
+                  formik.setValues({
+                    ...formik.values,
+                    addresses: formik.values.addresses.filter((_, i) => i !== index),
+                  });
+                }
+              "
+              class="!px-4 disabled:cursor-not-allowed disabled:opacity-50"
+              title="Remove address"
+              :disabled="formik.values.addresses.length <= 1"
+            >
+              x
+            </button>
+          </div>
+          <br />
+
+          <button
+            type="button"
+            @click="
+              () => {
+                formik.setValues({
+                  ...formik.values,
+                  addresses: [...formik.values.addresses, ''],
+                });
+              }
+            "
+            class="text-blue-500 underline"
+          >
+            Add address
+          </button>
+        </div>
+
         <br />
 
         <button type="submit" class="disabled:opacity-10 p-2" :disabled="!formik.isValid.value">
           Submit
         </button>
       </form>
-      <div>
-        <pre class="border p-4 rounded-md h-full"><code>{{JSON.stringify({
+      <div class="overflow-auto border p-4 rounded-md h-full">
+        <pre><code>{{JSON.stringify({
             values: formik.values,
             errors: formik.errors,
             touched: formik.touched,
@@ -60,6 +110,8 @@
           }, null, 2) }}</code></pre>
       </div>
     </div>
+
+    <ValidationSchemaPreview />
 
     <p class="py-2 text-sm">
       <span> You can find the source code for this example on </span>
@@ -76,8 +128,10 @@
   </section>
 </template>
 <script setup lang="ts">
-import { useFormik, FormTextField, FormTextArea, FormSelectField } from "vue-formik";
+import { useFormik, FormInput, FormTextArea, FormSelectField } from "vue-formik";
 import { onBeforeMount } from "vue";
+import { InitialValues, ValidationSchema } from "@/constants/homeFormik.ts";
+import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";
 
 const sexOptions = [
   { label: "Male", value: "M" },
@@ -87,36 +141,8 @@ const sexOptions = [
 ];
 
 const formik = useFormik({
-  initialValues: {
-    name: "",
-    email: "",
-    phone: "",
-    sex: "",
-    message: "",
-  },
-  validationSchema: {
-    name: (value: string) => {
-      if (!value) {
-        return "Name is required";
-      }
-    },
-    email: (value: string) => {
-      if (!value) {
-        return "Email is required";
-      }
-      if (!value.includes("@")) {
-        return "Invalid email";
-      }
-    },
-    phone: (value: string) => {
-      if (!value) {
-        return "Phone is required";
-      }
-      if (!/^\d{10}$/.test(value)) {
-        return "Invalid phone number. Must be 10 digits";
-      }
-    },
-  },
+  initialValues: InitialValues,
+  validationSchema: ValidationSchema,
   onSubmit(values, helpers) {
     console.log("Form submitted", values);
     helpers.reset();
@@ -128,31 +154,49 @@ onBeforeMount(() => {
 });
 </script>
 <style lang="scss">
-.v-formik {
-  &--field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  &--input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
+.vf-field {
+  label {
     font-size: 1rem;
+  }
+  .vf-input {
+    input {
+      width: 100%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      width: 100%;
+    }
 
     &--error {
-      border: 1px solid red;
+      border: 1px solid red !important;
 
       &:focus,
       &:focus-visible,
       &:focus-within {
-        outline: 1px solid red;
+        outline: 1px solid red !important;
       }
     }
   }
-  &--error {
+  .vf-error {
     color: red;
     font-size: 0.875rem;
+  }
+}
+
+.addresses {
+  .vf-field {
+    @apply grow;
+  }
+  button {
+    width: fit-content !important;
+    text-decoration: none;
   }
 }
 </style>
