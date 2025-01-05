@@ -1,16 +1,14 @@
 import * as Yup from "yup";
 
-const InitialValues: {
-  name: string;
-  email: string;
-  phone: string;
-  sex: string;
-  message: string;
-  addresses: string[];
-} = {
+interface IContact {
+  code: string;
+  number: string;
+}
+
+const InitialValues = {
   name: "",
   email: "",
-  phone: "",
+  contacts: [{ code: "", number: "" }],
   sex: "",
   message: "",
   addresses: [""],
@@ -30,13 +28,35 @@ const ValidationSchema = {
       return "Invalid email";
     }
   },
-  phone: (value: string) => {
-    if (!value) {
-      return "Phone is required";
+  contacts: (value: IContact[]) => {
+    if (value.length === 0) {
+      return "Contact is required";
     }
-    if (!/^\d{10}$/.test(value)) {
-      return "Invalid phone number. Must be 10 digits";
+
+    const errs = [];
+    for (let i = 0; i < value.length; i++) {
+      const err = {
+        code: "",
+        number: "",
+      };
+
+      if (!value[i].code) {
+        err.code = "Code is required";
+      }
+      if (!/^\+\d{2,3}$/.test(value[i].code)) {
+        err.code = "Invalid code. Must be in format +91";
+      }
+      if (!value[i].number) {
+        err.number = "Number is required";
+      }
+      if (!/^\d{10}$/.test(value[i].number)) {
+        err.number = "Invalid phone number. Must be 10 digits";
+      }
+
+      errs[i] = err;
     }
+
+    return errs.length ? errs : undefined;
   },
   addresses: (value: string[]) => {
     if (value.length === 0) {
@@ -69,17 +89,32 @@ const ValidationSchema = {
 const ValidationSchemaYup = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  phone: Yup.string()
-    .matches(/^\d{10}$/, "Invalid phone number. Must be 10 digits")
-    .required("Phone is required"),
+  contacts: Yup.array()
+    .of(
+      Yup.object().shape({
+        code: Yup.string()
+          .matches(/^\+\d{2,3}$/, "Invalid code. Must be in format +91")
+          .required("Code is required"),
+        number: Yup.string()
+          .matches(/^\d{10}$/, "Invalid phone number. Must be 10 digits")
+          .required("Number is required"),
+      }),
+    )
+    .min(1, "At least one contact is required")
+    .required("Contacts are required")
+    .default([{ code: "", number: "" }]), // Ensures contacts array is initialized
+  sex: Yup.string().required("Sex is required"),
+  message: Yup.string().required("Message is required"),
   addresses: Yup.array()
     .of(
       Yup.string()
         .min(3, "Address must be at least 3 characters")
-        .max(50, "Address must be at most 50 characters"),
+        .max(50, "Address must be at most 50 characters")
+        .required("Address is required"),
     )
-    .min(1, "Address is required")
-    .max(3, "You can add up to 3 addresses"),
+    .min(1, "At least one address is required")
+    .required("Addresses are required")
+    .default([""]), // Ensures addresses array is initialized
 });
 
-export { InitialValues, ValidationSchema, ValidationSchemaYup };
+export { InitialValues, ValidationSchemaYup, ValidationSchema };

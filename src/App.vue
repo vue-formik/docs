@@ -14,5 +14,6 @@ import TheFooter from "@/components/TheFooter.vue";
 <style lang="sass">
 .app_section
   .app_main
+    @apply flex flex-col
     min-height: calc(100vh - 52px - 52px)
 </style>
