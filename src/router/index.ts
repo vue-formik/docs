@@ -14,9 +14,31 @@ const router = createRouter({
       component: () => import("@/views/PlaygroundView.vue"),
     },
     {
+      path: "/getting-started",
+      name: "getting-started",
+      meta: {
+        sidebar: true,
+      },
+      children: [
+        {
+          path: "introduction",
+          name: "getting-started-introduction",
+          component: () => import("@/views/gettingStarted/IntroductionView.vue"),
+        },
+        {
+          path: "quick-start",
+          name: "getting-started-quick-start",
+          component: () => import("@/views/gettingStarted/QuickStartView.vue"),
+        },
+      ],
+    },
+    {
       path: "/docs",
       name: "docs",
       component: () => import("@/views/DocsView.vue"),
+      meta: {
+        sidebar: true,
+      },
     },
     {
       path: "/about",

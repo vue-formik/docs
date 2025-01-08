@@ -8,7 +8,7 @@
     <section class="mb-12">
       <div class="flex gap-4 justify-center items-center">
         <button class="primary-btn">Why Vue-Formik?</button>
-        <button class="secondary-btn">Get Started</button>
+        <router-link class="secondary-btn md" to="/getting-started">Get Started</router-link>
         <router-link class="secondary-btn md" to="/playground">Playground</router-link>
       </div>
     </section>

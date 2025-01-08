@@ -11,19 +11,20 @@
   display: flex
   align-items: center
   padding: .5rem 1rem
-  background-color: #333
   color: white
   gap: .5rem
+  @apply border-b border-surface-b
   img
     width: 2rem
     height: 2rem
     border-radius: 50%
   h1
     margin: 0
-    font-size: 1.5rem
+    font-size: 1rem
   a
     color: white
     text-decoration: none
+    @apply text-sm
     &:hover
       text-decoration: underline
 </style>

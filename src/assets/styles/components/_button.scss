@@ -31,10 +31,10 @@ button, a {
     @apply opacity-30 cursor-not-allowed;
   }
   &:hover {
-    @apply brightness-105;
+    @apply brightness-105 scale-105;
   }
   &:active {
-    @apply brightness-100;
+    @apply brightness-100 scale-95;
   }
   @apply transition-all duration-200 ease-in-out;
 
