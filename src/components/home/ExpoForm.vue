@@ -42,7 +42,7 @@
               () => {
                 formik.setValues({
                   ...formik.values,
-                  contacts: formik.values.contacts.filter((_, i) => i !== index)
+                  contacts: formik.values.contacts.filter((_, i) => i !== index),
                 });
               }
             "
@@ -58,7 +58,7 @@
           () => {
             formik.setValues({
               ...formik.values,
-              contacts: [...formik.values.contacts, { code: '', number: '' }]
+              contacts: [...formik.values.contacts, { code: '', number: '' }],
             });
           }
         "
@@ -107,7 +107,7 @@
             () => {
               formik.setValues({
                 ...formik.values,
-                addresses: formik.values.addresses.filter((_, i) => i !== index)
+                addresses: formik.values.addresses.filter((_, i) => i !== index),
               });
             }
           "
@@ -124,7 +124,7 @@
           () => {
             formik.setValues({
               ...formik.values,
-              addresses: [...formik.values.addresses, '']
+              addresses: [...formik.values.addresses, ''],
             });
           }
         "

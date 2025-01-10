@@ -41,8 +41,7 @@ a {
 
   &:focus,
   &:focus-visible,
-  &:focus-within
-  {
+  &:focus-within {
     //@apply outline-none ring-2 ring-on-secondary;
   }
 }
