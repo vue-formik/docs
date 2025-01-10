@@ -35,7 +35,50 @@ const router = createRouter({
     {
       path: "/docs",
       name: "docs",
-      component: () => import("@/views/DocsView.vue"),
+      children: [
+        {
+          path: "composable",
+          name: "composable",
+          children: [
+            {
+              path: "use-formik",
+              name: "use-formik",
+              component: () => import("@/views/libDocs/composables/UseFormikView.vue"),
+            },
+          ],
+        },
+        {
+          path: "components",
+          name: "components",
+          children: [
+            {
+              path: "why",
+              name: "why",
+              component: () => import("@/views/libDocs/components/WhyView.vue"),
+            },
+            {
+              path: "input-field",
+              name: "input-field",
+              component: () => import("@/views/libDocs/components/InputFieldVue.vue"),
+            },
+            {
+              path: "select-field",
+              name: "select-field",
+              component: () => import("@/views/libDocs/components/SelectFieldView.vue"),
+            },
+            {
+              path: "textarea-field",
+              name: "textarea-field",
+              component: () => import("@/views/libDocs/components/TextAreaField.vue"),
+            },
+            {
+              path: "contenteditable-field",
+              name: "contenteditable-field",
+              component: () => import("@/views/libDocs/components/ContentEditableFieldView.vue"),
+            },
+          ],
+        },
+      ],
       meta: {
         sidebar: true,
       },

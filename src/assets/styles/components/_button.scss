@@ -32,17 +32,17 @@ a {
     @apply opacity-30 cursor-not-allowed;
   }
   &:hover {
-    @apply brightness-105 scale-105;
+    @apply brightness-105 scale-[1.02];
   }
   &:active {
-    @apply brightness-100 scale-95;
+    @apply brightness-100 scale-[0.98];
   }
   @apply transition-all duration-200 ease-in-out;
 
   &:focus,
   &:focus-visible,
   &:focus-within {
-    @apply outline-none ring-2 ring-on-secondary;
+    //@apply outline-none ring-2 ring-on-secondary;
   }
 }
 

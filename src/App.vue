@@ -21,6 +21,7 @@
     <TheFooter />
   </section>
 </template>
+
 <script setup lang="ts">
 import { computed } from "vue";
 import TheAppbar from "@/components/TheAppbar.vue";
@@ -31,10 +32,13 @@ const router = useRouter();
 
 const showSidebar = computed(() => router.currentRoute.value.meta.sidebar);
 </script>
+
 <style lang="sass">
 .app_section
-  @apply max-w-[1400px] mx-auto
   .app_main
     @apply flex flex-col
-    min-height: calc(100vh - 52px - 52px)
+    height: calc(100vh - 52px - 52px)
+    max-height: calc(100vh - 52px - 52px)
+    overflow-y: auto
+    @apply max-w-[1400px] mx-auto
 </style>

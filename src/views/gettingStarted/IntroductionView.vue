@@ -39,6 +39,7 @@
     </p>
   </div>
 </template>
+
 <script setup lang="ts">
 import minimalExample from "@/constants/examples/minimalExample";
 import CodeBlock from "@/components/core/CodeBlock.vue";
