@@ -2,13 +2,14 @@ button {
   @apply px-4 py-2;
 }
 
-button, a {
+button,
+a {
   @apply rounded-md;
   &.sm {
     @apply px-2 py-1;
   }
   &.lg {
-      @apply px-6 py-3;
+    @apply px-6 py-3;
   }
   &.md {
     @apply px-4 py-2;
@@ -38,11 +39,13 @@ button, a {
   }
   @apply transition-all duration-200 ease-in-out;
 
-  &:focus, &:focus-visible, &:focus-within {
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
     @apply outline-none ring-2 ring-on-secondary;
   }
 }
 
 a {
-    @apply no-underline;
+  @apply no-underline;
 }

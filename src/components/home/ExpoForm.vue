@@ -150,6 +150,7 @@
   </div>
 </template>
 <script setup lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormInput, FormSelectField, FormTextArea } from "vue-formik";
 import useFormikForm from "@/composables/formik.ts";
 
