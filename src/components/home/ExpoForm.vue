@@ -154,7 +154,7 @@ import { FormInput, FormSelectField, FormTextArea } from "vue-formik";
 import useFormikForm from "@/composables/formik.ts";
 
 const props = defineProps<{
-  validationSchema: any;
+  validationSchema: never;
 }>();
 
 const sexOptions = [
