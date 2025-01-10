@@ -10,6 +10,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 const code = `const ValidationSchema = {
   name: (value: string) => {
@@ -116,6 +117,7 @@ const yupCode = `const ValidationSchemaYup = Yup.object().shape({
 });
 `;
 </script>
+
 <style lang="sass" scoped>
 .container
   margin-block: 2rem

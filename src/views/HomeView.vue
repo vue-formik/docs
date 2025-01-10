@@ -8,7 +8,9 @@
     <section class="mb-12">
       <div class="flex gap-4 justify-center items-center">
         <button class="primary-btn">Why Vue-Formik?</button>
-        <router-link class="secondary-btn md" to="/getting-started">Get Started</router-link>
+        <router-link class="secondary-btn md" to="/getting-started/introduction">
+          Get Started
+        </router-link>
         <router-link class="secondary-btn md" to="/playground">Playground</router-link>
       </div>
     </section>
@@ -35,7 +37,9 @@
     </section>
   </section>
 </template>
+
 <script setup lang="ts"></script>
+
 <style>
 .text-gradient {
   background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);

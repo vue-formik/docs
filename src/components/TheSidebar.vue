@@ -1,10 +1,9 @@
 <template>
   <aside class="the-sidebar">
-    <h2 class="">Vue Formik</h2>
     <ul class="flex flex-col gap-2">
       <template v-for="(item, index) in navItems" :key="index">
         <li>
-          <p class="mt-6 mb-1.5">
+          <p>
             {{ item.name }}
           </p>
           <ul v-if="item.children" class="">
@@ -21,6 +20,7 @@
     </ul>
   </aside>
 </template>
+
 <script setup lang="ts">
 const navItems = [
   {
@@ -32,31 +32,31 @@ const navItems = [
   },
   {
     name: "Composable",
-    children: [{ name: "useFormik", path: "/composable/use-formik" }],
+    children: [{ name: "useFormik", path: "/docs/composable/use-formik" }],
   },
   {
     name: "Components",
     children: [
-      { name: "Why Components?", path: "/components/why" },
-      { name: "Input", path: "/components/input" },
-      { name: "Select", path: "/components/select" },
-      { name: "Textarea", path: "/components/textarea" },
-      { name: "Content Editable", path: "/components/content-editable" },
+      { name: "Why Components?", path: "/docs/components/why" },
+      { name: "Input Field", path: "/docs/components/input-field" },
+      { name: "Select Field", path: "/docs/components/select-field" },
+      { name: "Textarea Field", path: "/docs/components/textarea-field" },
+      { name: "Content Editable", path: "/docs/components/contenteditable-field" },
     ],
   },
 ];
 </script>
+
 <style lang="sass">
 .the-sidebar
-  @apply col-span-1 pt-6
+  @apply col-span-1 pt-4 pl-2
   @apply border-r border-surface-b
-
-  h2
-    @apply font-bold p-2
 
   ul
     li
       @apply px-2 text-sm
+      & > p
+        @apply mt-5 mb-1.5 text-xs
       a
         @apply text-gray-400 rounded
         @apply transition-all duration-200 ease-in-out
@@ -66,4 +66,6 @@ const navItems = [
           @apply text-white brightness-90
         &.router-link-exact-active
           @apply text-primary
+      ul li
+        @apply mb-1
 </style>

@@ -5,16 +5,16 @@
 
     <div class="mb-4 border-b">
       <button
-        @click="() => (tab = 1)"
         :class="{ 'bg-gray-800 text-white': tab === 1 }"
         class="py-2 px-4 mr-2"
+        @click="() => (tab = 1)"
       >
         Custom
       </button>
       <button
-        @click="() => (tab = 0)"
         :class="{ 'bg-gray-800 text-white': tab === 0 }"
         class="py-2 px-4 mr-2"
+        @click="() => (tab = 0)"
       >
         Yup
       </button>
@@ -41,6 +41,7 @@
     </p>
   </section>
 </template>
+
 <script setup lang="ts">
 import { onBeforeMount, ref } from "vue";
 import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";

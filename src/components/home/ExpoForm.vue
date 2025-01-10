@@ -35,17 +35,17 @@
 
           <button
             type="button"
+            class="secondary-outlined-btn"
+            title="Remove contact"
+            :disabled="formik.values.contacts.length <= 1"
             @click="
               () => {
                 formik.setValues({
                   ...formik.values,
-                  contacts: formik.values.contacts.filter((_, i) => i !== index),
+                  contacts: formik.values.contacts.filter((_, i) => i !== index)
                 });
               }
             "
-            class="secondary-outlined-btn"
-            title="Remove contact"
-            :disabled="formik.values.contacts.length <= 1"
           >
             x
           </button>
@@ -53,15 +53,15 @@
       </div>
       <button
         type="button"
+        class="w-fit mt-8 secondary-outlined-btn"
         @click="
           () => {
             formik.setValues({
               ...formik.values,
-              contacts: [...formik.values.contacts, { code: '', number: '' }],
+              contacts: [...formik.values.contacts, { code: '', number: '' }]
             });
           }
         "
-        class="w-fit mt-8 secondary-outlined-btn"
       >
         Add contact
       </button>
@@ -87,9 +87,9 @@
     <div class="addresses flex flex-col gap-2">
       <div>Addresses:</div>
       <div
-        class="flex items-start gap-4"
         v-for="(_, index) in formik.values.addresses"
         :key="index"
+        class="flex items-start gap-4"
       >
         <FormInput
           :formik="formik"
@@ -100,17 +100,17 @@
 
         <button
           type="button"
+          class="secondary-outlined-btn"
+          title="Remove address"
+          :disabled="formik.values.addresses.length <= 1"
           @click="
             () => {
               formik.setValues({
                 ...formik.values,
-                addresses: formik.values.addresses.filter((_, i) => i !== index),
+                addresses: formik.values.addresses.filter((_, i) => i !== index)
               });
             }
           "
-          class="secondary-outlined-btn"
-          title="Remove address"
-          :disabled="formik.values.addresses.length <= 1"
         >
           x
         </button>
@@ -119,15 +119,15 @@
 
       <button
         type="button"
+        class="secondary-outlined-btn"
         @click="
           () => {
             formik.setValues({
               ...formik.values,
-              addresses: [...formik.values.addresses, ''],
+              addresses: [...formik.values.addresses, '']
             });
           }
         "
-        class="secondary-outlined-btn"
       >
         Add address
       </button>
@@ -149,6 +149,7 @@
         }, null, 2) }}</code></pre>
   </div>
 </template>
+
 <script setup lang="ts">
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormInput, FormSelectField, FormTextArea } from "vue-formik";
