@@ -49,7 +49,7 @@ const navItems = [
 
 <style lang="sass">
 .the-sidebar
-  @apply col-span-1 pt-4 pl-2
+  @apply pt-4 pl-2
   @apply border-r border-surface-b
 
   ul
@@ -67,5 +67,5 @@ const navItems = [
         &.router-link-exact-active
           @apply text-primary
       ul li
-        @apply mb-1
+        @apply mb-1.5
 </style>

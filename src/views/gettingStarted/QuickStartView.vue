@@ -1,5 +1,5 @@
 <template>
-  <div class="info_page">
+  <section class="info_page">
     <h1>Quick Start</h1>
     <hr />
     <h2>Try Vue-Formik Online</h2>
@@ -52,7 +52,7 @@
     </p>
 
     <CodeBlock :content="minimalExample" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

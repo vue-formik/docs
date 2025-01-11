@@ -1,5 +1,5 @@
 <template>
-  <div class="info_page">
+  <section class="info_page">
     <h1>Introduction</h1>
     <hr />
 
@@ -37,7 +37,7 @@
       The target of the library is to support most of the JS validation libraries like Joi, Zod,
       etc.
     </p>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

@@ -19,9 +19,4 @@ body {
   hr {
     @apply border-0 border-t border-solid border-surface-b;
   }
-
-  .app_main {
-    scrollbar-width: thin;
-    scrollbar-color: hsla(0, 0%, 100%, 0.3) hsla(0, 0%, 100%, 0.1);
-  }
 }
