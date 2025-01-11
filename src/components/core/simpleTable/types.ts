@@ -1,6 +1,7 @@
 interface IColumn {
   header: string;
   field: string;
+  code?: boolean;
   align?: "start" | "justify" | "end" | "center";
 }
 interface IRow {

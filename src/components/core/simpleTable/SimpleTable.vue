@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import type { Props, IClasses } from "./types.ts";
+import FieldPreview from "@/views/libDocs/composables/useFormik/FieldPreview.vue";
 
 const defaultClasses = {
   root: "vf-table-root",
@@ -63,7 +64,7 @@ const classesDict = computed(() => {
             :style="{ textAlign: column.align ?? 'start' }"
             :class="classesDict.td"
           >
-            {{ row[column.field] }}
+            <FieldPreview :row="row" :column="column" />
           </td>
         </tr>
       </tbody>

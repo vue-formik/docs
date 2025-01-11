@@ -43,7 +43,7 @@ const toggleSidebar = () => {
 const screenWidth = ref(0);
 onMounted(() => {
   screenWidth.value = window.innerWidth;
-  window.addEventListener("resVNodeRefize", () => {
+  window.addEventListener("resize", () => {
     screenWidth.value = window.innerWidth;
     if (screenWidth.value > 780) {
       sidebarState.value = true;
