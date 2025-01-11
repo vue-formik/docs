@@ -9,7 +9,7 @@
           <ul v-if="item.children" class="">
             <template v-for="(child, i) in item.children" :key="i">
               <li>
-                <router-link :to="child.path" class="">
+                <router-link :to="child.path" @click="toggleSidebar">
                   {{ child.name }}
                 </router-link>
               </li>
@@ -22,6 +22,10 @@
 </template>
 
 <script setup lang="ts">
+defineProps<{
+  toggleSidebar: () => void;
+}>();
+
 const navItems = [
   {
     name: "Getting Started",

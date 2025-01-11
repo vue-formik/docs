@@ -1,5 +1,6 @@
 .pg-view {
   padding: 1rem;
+  @apply max-w-[1400px] mx-auto;
   h2 {
     font-size: 2rem;
     font-weight: 700;

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 defineProps<{
-  onShowSidebar: () => void;
+  toggleSidebar: () => void;
 }>();
 </script>
 
 <template>
   <nav class="the_appbar">
     <div class="the_appbar__content">
-      <button @click="onShowSidebar">
+      <button @click="toggleSidebar">
         <img src="/logo.png" alt="Logo" />
       </button>
       <h1><router-link to="/" class="!no-underline">Vue Formik</router-link></h1>
@@ -19,7 +19,9 @@ defineProps<{
 
 <style lang="sass">
 .the_appbar
+  @apply sticky top-0 bg-surface
   @apply border-b border-surface-b
+  @apply z-[100]
   &__content
     display: flex
     align-items: center

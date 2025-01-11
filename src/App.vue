@@ -1,38 +1,31 @@
 <template>
-  <TheAppbar
-    ref="appBarRef"
-    :on-show-sidebar="
-      () => {
-        sidebarState = !sidebarState;
-      }
-    "
+  <TheAppbar ref="appBarRef" :toggle-sidebar="toggleSidebar" />
+  <TheSidebar
+    v-if="showSidebar"
+    :class="{
+      show: sidebarState,
+    }"
+    :toggle-sidebar="toggleSidebar"
   />
-  <section class="app_content">
-    <TheSidebar
-      v-if="showSidebar"
-      :class="{
-        show: sidebarState,
-      }"
-    />
-    <div
-      v-if="showSidebar && screenWidth < 780 && sidebarState"
-      @click="sidebarState = false"
-      class="the-sidebar-mobile-overlay"
-      title="Close Sidebar"
-    />
-    <main
-      :class="{
-        app_main: true,
-      }"
-    >
-      <router-view />
-    </main>
-  </section>
-  <TheFooter v-if="showFooter" ref="footerRef" />
+  <div
+    v-if="showSidebar && screenWidth < 780 && sidebarState"
+    @click="sidebarState = false"
+    class="the-sidebar-mobile-overlay"
+    title="Close Sidebar"
+  />
+  <main
+    :class="{
+      app_main: true,
+      with_sidebar: showSidebar,
+    }"
+  >
+    <router-view />
+  </main>
+  <TheFooter v-if="showFooter" />
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, useTemplateRef, type VNodeRef } from "vue";
+import { computed, onMounted, onUnmounted, ref, useTemplateRef } from "vue";
 import TheAppbar from "@/components/TheAppbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import { useRouter } from "vue-router";
@@ -42,6 +35,10 @@ const router = useRouter();
 const sidebarState = ref(false);
 const showSidebar = computed(() => router.currentRoute.value.meta.sidebar);
 const showFooter = computed(() => router.currentRoute.value.meta.footer);
+
+const toggleSidebar = () => {
+  sidebarState.value = !sidebarState.value;
+};
 
 const screenWidth = ref(0);
 onMounted(() => {
@@ -59,66 +56,44 @@ onUnmounted(() => {
   });
 });
 
-const appBarRef = useTemplateRef("appBarRef");
-const footerRef = useTemplateRef("footerRef");
+const appBarRef = useTemplateRef<InstanceType<typeof TheAppbar>>("appBarRef");
 
 const appBarHeight = computed(() => {
   return appBarRef.value ? appBarRef.value.$el.clientHeight + "px" : 0;
 });
-
-const footerHeight = computed(() => {
-  return footerRef.value ? footerRef.value.$el.clientHeight + "px" : 0;
-});
-
-const heightPadding = computed(() => {
-  if (screenWidth.value < 425) {
-    return "8px";
-  } else {
-    return "2px";
-  }
-});
-
-const calcHeight = computed(() => {
-  if (showFooter && footerHeight.value) {
-    return `calc(100vh - ${appBarHeight.value} - ${footerHeight.value} - ${heightPadding.value})`;
-  } else {
-    return `calc(100vh - ${appBarHeight.value} - ${heightPadding.value})`;
-  }
-});
 </script>
-
 <style lang="sass">
-.app_content
-  @apply flex flex-row
+.the-sidebar
+  @media (min-width: 1400px)
+    @apply w-[460px]
+  @media (min-width: 780px)
+    @apply flex justify-end bg-surface
+    @apply fixed bottom-0 left-0 z-[50]
+    top: v-bind(appBarHeight)
 
-  .the-sidebar
-    @media (min-width: 780px)
-      @apply w-[40%] flex justify-end
-      & > ul
-        @apply w-[240px]
+    & > ul
+      @apply w-[230px]
 
-    @media (max-width: 780px)
-      @apply w-[300px] fixed top-0 left-0 h-full z-50
-      background-color: rgba(0, 0, 0, 0.7)
-      backdrop-filter: blur(10px)
-      transform: translateX(-100%)
-      transition: transform 0.3s ease-in-out
-      &.show
-        transform: translateX(0)
-
-  .the-sidebar-mobile-overlay
-    @apply fixed top-0 left-0 w-full h-full
-    @apply cursor-pointer z-40
-    background-color: rgba(0, 0, 0, 0.5)
+  @media (max-width: 780px)
+    @apply w-[300px] fixed top-0 left-0 h-full z-[102]
+    background-color: rgba(0, 0, 0, 0.7)
     backdrop-filter: blur(10px)
+    transform: translateX(-100%)
+    transition: transform 0.3s ease-in-out
+    &.show
+      transform: translateX(0)
 
-  .app_main
-    @apply grow flex flex-col
-    overflow-y: auto
+.the-sidebar-mobile-overlay
+  @apply fixed top-0 left-0 w-full h-full
+  @apply cursor-pointer z-[101]
+  background-color: rgba(0, 0, 0, 0.5)
+  backdrop-filter: blur(10px)
 
-    height: v-bind(calcHeight)
-    max-height: v-bind(calcHeight)
-
-    scrollbar-width: thin
-    scrollbar-color: hsla(0, 0%, 100%, 0.3) hsla(0, 0%, 100%, 0.1)
+.app_main
+  @apply flex flex-col
+  &.with_sidebar
+    @media (min-width: 1400px)
+      padding-left: 450px !important
+    @media (min-width: 780px) and (max-width: 1399px)
+      padding-left: 250px !important
 </style>
