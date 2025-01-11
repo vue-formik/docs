@@ -2,47 +2,64 @@
   <section class="info_page">
     <section>
       <h1 class="">Introduction</h1>
-      <article class="my-10">
+      <article class="mb-10 mt-8">
         <h4 class="flex items-center gap-2"><InfoIcon /> Did you know?</h4>
         <p>
-          Vue Formik is built with <strong>TypeScript</strong> and provides a lot of type
-          definitions to help you write type-safe code. It also provides a lot of utility functions
-          to help you validate your form fields.
+          Vue Formik is built with <strong>TypeScript</strong>, offering extensive type definitions
+          to help you write type-safe code. Additionally, it provides numerous utility functions to
+          simplify form validation.
         </p>
       </article>
     </section>
+
     <section>
-      <h2>What is Vue Formik?</h2>
+      <h2>🤔 What is Vue Formik?</h2>
 
       <p>
-        Vue Formik is a library for Vue.js that helps you to interact with your HTML forms in a more
-        structured way. It is a inspired by a popular ReactJS library called
-        <a href="https://formik.org" target="_blank" title="Formik">Formik</a>. Vue Formik is a
-        wrapper around Vue.js built-in reactivity system that makes it easier to work with forms.
+        Vue Formik is a powerful library for Vue.js that simplifies form handling by providing a
+        more structured approach to managing HTML forms. Inspired by the popular React library
+        <a href="https://formik.org" target="_blank" title="Formik">Formik</a>, Vue Formik leverages
+        Vue's built-in reactivity system to streamline form development and management. 💡
       </p>
     </section>
 
     <section>
-      <h3>Here is a minimal example:</h3>
+      <h3>📋 Minimal Example:</h3>
 
       <CodeBlock :content="minimalExample" />
 
       <p>
-        The above example shows how you can use Vue Formik to create a simple form with a single
-        input field. Vue Formik provides a <code>useFormik</code> function that you can use to
-        create a formik object. This object contains all the necessary functions and properties to
-        interact with the form.
+        The example above demonstrates how you can use Vue Formik to create a simple form with a
+        single input field. At the core of Vue Formik is the <code>useFormik</code> function, which
+        provides all the tools and properties you need to interact with and manage your forms
+        effectively. 🔧
       </p>
     </section>
 
-    <p>
-      For validation Vue Formik supports only synchronous validation for now. But we are planning to
-      add support for asynchronous validation in the future.<br />
-      You can write your own custom validation functions or use Yup object schema validation library
-      to validate your form fields.<br />
-      The target of the library is to support most of the JS validation libraries like Joi, Zod,
-      etc.
-    </p>
+    <blockquote class="!pt-4 !pl-4">
+      <h3>
+        <strong>🛡️ How Validation Works?</strong>
+      </h3>
+
+      <ol class="list-decimal !ml-6">
+        <li>
+          Vue Formik currently supports only synchronous validation. However, support for
+          asynchronous validation is on our roadmap. 🛠️
+        </li>
+        <li>
+          You can create custom validation functions or integrate a library like
+          <a href="https://github.com/jquense/yup" target="_blank" title="Yup">Yup</a> for
+          schema-based validation.
+        </li>
+
+        <li>
+          Future plans include extending support to other popular validation libraries, such as
+          <a href="https://zod.dev/" target="_blank" title="Zod">Zod</a> and
+          <a href="https://joi.dev/" target="_blank" title="Joi">Joi</a>, ensuring maximum
+          flexibility and compatibility. 🌟
+        </li>
+      </ol>
+    </blockquote>
   </section>
 </template>
 
