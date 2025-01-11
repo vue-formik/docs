@@ -43,7 +43,7 @@ const toggleSidebar = () => {
 const screenWidth = ref(0);
 onMounted(() => {
   screenWidth.value = window.innerWidth;
-  window.addEventListener("resVNodeRefize", () => {
+  window.addEventListener("resize", () => {
     screenWidth.value = window.innerWidth;
     if (screenWidth.value > 780) {
       sidebarState.value = true;
@@ -92,9 +92,10 @@ const appBarHeight = computed(() => {
 
 .app_main
   @apply flex flex-col
+  @apply max-w-[1610px]
   &.with_sidebar
     @media (min-width: 1400px)
-      padding-left: 450px !important
+      padding-left: 466px !important
     @media (min-width: 780px) and (max-width: 1399px)
       padding-left: 250px !important
 </style>

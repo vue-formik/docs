@@ -43,7 +43,7 @@ export default [
         2,
         {
           baseIndent: 0,
-          switchCase: 2,
+          switchCase: 1,
           ignores: [],
         },
       ],
