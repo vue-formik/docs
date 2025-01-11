@@ -51,7 +51,7 @@ export default [
       "vue/arrow-spacing": "error",
       "vue/block-spacing": "error",
       "vue/brace-style": "error",
-      "vue/comma-dangle": "always-multiline",
+      "vue/comma-dangle": ["error", "always-multiline"],
       "vue/dot-notation": "error",
       "vue/max-attributes-per-line": [
         "error",

@@ -9,9 +9,9 @@
   />
   <div
     v-if="showSidebar && screenWidth < 780 && sidebarState"
-    @click="sidebarState = false"
     class="the-sidebar-mobile-overlay"
     title="Close Sidebar"
+    @click="sidebarState = false"
   />
   <main
     :class="{
@@ -62,6 +62,7 @@ const appBarHeight = computed(() => {
   return appBarRef.value ? appBarRef.value.$el.clientHeight + "px" : 0;
 });
 </script>
+
 <style lang="sass">
 .the-sidebar
   @media (min-width: 1400px)
