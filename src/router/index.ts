@@ -7,11 +7,17 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: () => import("@/views/HomeView.vue"),
+      meta: {
+        footer: true,
+      },
     },
     {
       path: "/playground",
       name: "playground",
       component: () => import("@/views/PlaygroundView.vue"),
+      meta: {
+        footer: true,
+      },
     },
     {
       path: "/getting-started",
@@ -43,7 +49,7 @@ const router = createRouter({
             {
               path: "use-formik",
               name: "use-formik",
-              component: () => import("@/views/libDocs/composables/UseFormikView.vue"),
+              component: () => import("@/views/libDocs/composables/useFormik/UseFormikView.vue"),
             },
           ],
         },

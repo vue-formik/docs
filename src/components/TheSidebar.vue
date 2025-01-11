@@ -9,7 +9,7 @@
           <ul v-if="item.children" class="">
             <template v-for="(child, i) in item.children" :key="i">
               <li>
-                <router-link :to="child.path" class="">
+                <router-link :to="child.path" @click="toggleSidebar">
                   {{ child.name }}
                 </router-link>
               </li>
@@ -22,6 +22,10 @@
 </template>
 
 <script setup lang="ts">
+defineProps<{
+  toggleSidebar: () => void;
+}>();
+
 const navItems = [
   {
     name: "Getting Started",
@@ -49,7 +53,7 @@ const navItems = [
 
 <style lang="sass">
 .the-sidebar
-  @apply col-span-1 pt-4 pl-2
+  @apply pt-4 pl-2
   @apply border-r border-surface-b
 
   ul
@@ -67,5 +71,5 @@ const navItems = [
         &.router-link-exact-active
           @apply text-primary
       ul li
-        @apply mb-1
+        @apply mb-1.5
 </style>

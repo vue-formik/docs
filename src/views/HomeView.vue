@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col justify-center grow text-center">
+  <section class="flex flex-col justify-center grow text-center h-[90vh]">
     <header class="mb-12">
       <h1 class="text-gradient max-w-[650px] mx-auto">Vue Formik: Making Forms a Breeze</h1>
       <p class="text-lg">Vue Formik is a form library for Vue.js that helps you with your forms.</p>

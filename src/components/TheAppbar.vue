@@ -1,8 +1,16 @@
+<script lang="ts" setup>
+defineProps<{
+  toggleSidebar: () => void;
+}>();
+</script>
+
 <template>
   <nav class="the_appbar">
     <div class="the_appbar__content">
-      <img src="/logo.png" alt="Logo" />
-      <h1><router-link to="/">Vue Formik</router-link></h1>
+      <button @click="toggleSidebar">
+        <img src="/logo.png" alt="Logo" />
+      </button>
+      <h1><router-link to="/" class="!no-underline">Vue Formik</router-link></h1>
       <div class="grow" />
       <a href="https://github.com/vue-formik/vue-formik" target="_blank"> ⭐ Star us on GitHub </a>
     </div>
@@ -11,7 +19,9 @@
 
 <style lang="sass">
 .the_appbar
+  @apply sticky top-0 bg-surface
   @apply border-b border-surface-b
+  @apply z-[100]
   &__content
     display: flex
     align-items: center

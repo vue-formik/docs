@@ -145,7 +145,7 @@
           errors: formik.errors,
           touched: formik.touched,
           isValid: formik.isValid.value,
-          isDirty: formik.isDirty.value
+          isDirty: formik.isDirty.value,
         }, null, 2) }}</code></pre>
   </div>
 </template>
