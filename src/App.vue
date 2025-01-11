@@ -94,7 +94,7 @@ const appBarHeight = computed(() => {
   @apply flex flex-col
   &.with_sidebar
     @media (min-width: 1400px)
-      padding-left: 450px !important
+      padding-left: 466px !important
     @media (min-width: 780px) and (max-width: 1399px)
       padding-left: 250px !important
 </style>

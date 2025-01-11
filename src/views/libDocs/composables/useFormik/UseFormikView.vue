@@ -19,7 +19,7 @@ import {
 <template>
   <section class="info_page">
     <section>
-      <h1>✨ <code>useFormik</code> Composable</h1>
+      <h1 class="!mb-8">✨ <code>useFormik</code> Composable</h1>
 
       <p class="mb-2">
         The <code>useFormik</code> composable is your ultimate ally for managing complex forms in
