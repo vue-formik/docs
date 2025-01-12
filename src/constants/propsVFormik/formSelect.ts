@@ -1,11 +1,12 @@
 import type { IColumn, IRow } from "@/components/core/simpleTable/types.ts";
 
-export const FormInputPropsCols = [
+export const FormSelectPropsCols = [
   { header: "Name", field: "name" },
   { header: "Type", field: "type", code: true },
   { header: "Description", field: "description" },
 ] as IColumn[];
-export const FormInputProps = [
+
+export const FormSelectProps = [
   {
     name: "formik",
     type: "object",
@@ -24,21 +25,16 @@ export const FormInputProps = [
       "An optional label for the input field. If provided, it is displayed as a field label.",
   },
   {
-    name: "type",
-    type: "string",
+    name: "options",
+    type: "Array<{ label: string; value: string | number }>",
     description:
-      "The type of the input field (e.g., 'text', 'password', 'email'). Defaults to 'text' if not provided.",
+      "An array of objects representing the selectable options. Each object should have a 'label' and 'value' property.",
   },
   {
     name: "placeholder",
     type: "string",
     description:
       "An optional placeholder for the input field. It is displayed inside the input when no value is present.",
-  },
-  {
-    name: "readonly",
-    type: "boolean",
-    description: "Determines if the input field is read-only. Defaults to false.",
   },
   {
     name: "disabled",
@@ -50,27 +46,5 @@ export const FormInputProps = [
     type: "object",
     description:
       "Additional props to pass to the input field, such as attributes like 'required' or custom data attributes.",
-  },
-] as IRow[];
-
-export const FormInputSlotCols = [
-  { header: "Name", field: "name" },
-  { header: "Description", field: "description" },
-] as IColumn[];
-export const FormInputSlots = [
-  {
-    name: "default",
-    description:
-      "Slot for rendering additional content or components inside the input container, below the input field.",
-  },
-  {
-    name: "prepend",
-    description:
-      "Slot for rendering content or components before the input field, such as an icon or label.",
-  },
-  {
-    name: "append",
-    description:
-      "Slot for rendering content or components after the input field, such as an action button or icon.",
   },
 ] as IRow[];
