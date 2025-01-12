@@ -62,6 +62,65 @@ const usage2 = `
       <p>If your field has array of values then you can use the <code>name</code> like:</p>
       <CodeBlock :content="usage2" />
     </section>
+
+    <section>
+      <h2>Class Naming Style</h2>
+    </section>
+    <section>
+      <ol class="list-decimal">
+        <li>
+          <strong>Base Classes:</strong>
+          The foundational classes for this component are:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-field</code>: The primary class applied to the container, used for general
+              field styling.
+            </li>
+            <li>
+              <code>vf-textarea-field</code>: An additional base-specific class indicating the field
+              is a textarea input.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Dynamic Classes:</strong>
+          Classes applied conditionally based on the component's state and props:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-field--error</code>: Applied to the container when the field has a validation
+              error, determined by <code>formik.hasFieldError(name)</code>.
+            </li>
+            <li>
+              <code>vf-input--disabled</code>: Applied to the <code>textarea</code> element when the
+              <code>disabled</code> prop is true, indicating that the field is not editable.
+            </li>
+            <li>
+              <code>vf-input--readonly</code>: Applied to the <code>textarea</code> element when the
+              <code>readonly</code> prop is true, marking the field as read-only.
+            </li>
+            <li>
+              <code>vf-input--error</code>: Applied to the <code>textarea</code> element when the
+              field has a validation error, determined by <code>formik.hasFieldError(name)</code>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Input Wrapper Class:</strong>
+          The <code>vf-input</code> class is applied to the wrapper around the
+          <code>textarea</code> element. It serves as the container for the input and optional
+          prepend/append slots.
+        </li>
+        <li>
+          <strong>Error Message Class:</strong>
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-error</code>: Applied to the paragraph element displaying error messages.
+              This class is rendered when <code>formik.hasFieldError(name)</code> is true.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
   </div>
 </template>
 

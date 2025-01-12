@@ -66,6 +66,95 @@ const usage2 = `
       <p>If your field has array of values then you can use the <code>name</code> like:</p>
       <CodeBlock :content="usage2" />
     </section>
+
+    <section>
+      <h2>Class Naming Style</h2>
+    </section>
+    <section>
+      <ol class="list-decimal">
+        <li>
+          <strong>Base Class:</strong> The base class for this component is <code>vf-field</code>.
+          It serves as the primary identifier for the component and provides the foundational
+          styles.
+        </li>
+        <li>
+          <strong>Dynamic Type-Specific Classes:</strong>
+          The component applies a type-specific class dynamically using the
+          <code>type</code> prop.
+          <br />
+          For specific types (e.g., <code>password</code>, <code>email</code>), the classes will be
+          <code>vf-password-field</code> or <code>vf-email-field</code>, respectively.
+        </li>
+        <li>
+          <strong>Modifier Classes:</strong> These classes modify the appearance or behavior of the
+          base component:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-field--error</code>: Applied when the field has a validation error,
+              determined by <code>formik.hasFieldError(name)</code>.
+            </li>
+            <li>
+              <code>vf-field--disabled</code>: Applied when the field is in a disabled state,
+              determined by the <code>disabled</code> prop.
+            </li>
+            <li>
+              <code>vf-field--readonly</code>: Applied when the field is set to read-only,
+              determined by the <code>readonly</code> prop.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Input Element Classes:</strong> Classes applied specifically to the
+          <code>input</code> element within the component:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-input--error</code>: Indicates an error in the input field, applied when
+              <code>formik.hasFieldError(name)</code> is true.
+            </li>
+            <li>
+              <code>vf-input--disabled</code>: Marks the input as disabled, determined by the
+              <code>disabled</code> prop.
+            </li>
+            <li>
+              <code>vf-input--readonly</code>: Marks the input as read-only, determined by the
+              <code>readonly</code> prop.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Error Message Class:</strong>
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-error</code>: Used for displaying error messages below the input field. The
+              error message is rendered when <code>formik.hasFieldError(name)</code> is true.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Dynamic Behavior:</strong> Classes and attributes are applied conditionally based
+          on the component's props and state:
+          <ul class="my-4 list-disc">
+            <li>
+              The <code>vf-field--error</code> and <code>vf-input--error</code> classes are applied
+              when <code>formik.hasFieldError(name)</code> is true.
+            </li>
+            <li>
+              The <code>vf-field--disabled</code> and <code>vf-input--disabled</code> classes are
+              applied when the <code>disabled</code> prop is true.
+            </li>
+            <li>
+              The <code>vf-field--readonly</code> and <code>vf-input--readonly</code> classes are
+              applied when the <code>readonly</code> prop is true.
+            </li>
+            <li>
+              ARIA attributes like <code>aria-labelledby</code>, <code>aria-describedby</code>,
+              <code>aria-invalid</code>, <code>aria-required</code>, <code>aria-readonly</code>, and
+              <code>aria-disabled</code> are applied dynamically to enhance accessibility.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
   </div>
 </template>
 

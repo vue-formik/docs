@@ -72,6 +72,49 @@ const usage2 = `
       <p>If your field has array of values then you can use the <code>name</code> like:</p>
       <CodeBlock :content="usage2" />
     </section>
+
+    <section>
+      <h2>Class Naming Style</h2>
+    </section>
+    <section>
+      <ol class="list-decimal">
+        <li>
+          <strong>Base Classes:</strong>
+          The foundational classes for this component are:
+          <ul class="my-4 list-disc">
+            <li><code>vf-field</code>: The primary class for styling the field container.</li>
+            <li>
+              <code>vf-select-field</code>: A base-specific class indicating the field is a select
+              input.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Input Wrapper Class:</strong>
+          The <code>vf-input</code> class is applied to the wrapper element surrounding the
+          <code>select</code> input. It serves as the container for the select element and optional
+          prepend/append slots.
+        </li>
+        <li>
+          <strong>Dynamic Classes:</strong> Classes applied conditionally based on the component's
+          state and props:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-field--error</code>: Applied when the field has a validation error,
+              determined by <code>formik.hasFieldError(name)</code>.
+            </li>
+            <li>
+              <code>vf-input--error</code>: Applied to the <code>select</code> element when
+              <code>formik.hasFieldError(name)</code> is true, indicating an error in the field.
+            </li>
+            <li>
+              <code>vf-input--disabled</code>: Applied to the <code>select</code> element when the
+              <code>disabled</code> prop is true, marking the field as disabled.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
   </div>
 </template>
 

@@ -5,7 +5,8 @@
     :class="{
       show: sidebarState,
     }"
-    :toggle-sidebar="toggleSidebar"
+    :toggle-sidebar="closeSidebar"
+    :is-mobile="screenWidth < 780"
   />
   <div
     v-if="showSidebar && screenWidth < 780 && sidebarState"
@@ -38,6 +39,9 @@ const showFooter = computed(() => router.currentRoute.value.meta.footer);
 
 const toggleSidebar = () => {
   sidebarState.value = !sidebarState.value;
+};
+const closeSidebar = () => {
+  sidebarState.value = false;
 };
 
 const screenWidth = ref(0);

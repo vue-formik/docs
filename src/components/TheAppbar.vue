@@ -12,6 +12,7 @@ defineProps<{
       </button>
       <h1><router-link to="/" class="!no-underline">Vue Formik</router-link></h1>
       <div class="grow" />
+      <router-link to="/about">About</router-link>
       <a href="https://github.com/vue-formik/vue-formik" target="_blank"> ⭐ Star us on GitHub </a>
     </div>
   </nav>
@@ -40,7 +41,7 @@ defineProps<{
   a
     color: white
     text-decoration: none
-    @apply text-sm
+    @apply text-sm px-2 mx-2
     &:hover
       text-decoration: underline
 </style>
