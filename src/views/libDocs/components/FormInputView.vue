@@ -3,7 +3,6 @@ import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
 import {
   FormInputProps,
   FormInputPropsCols,
-  FormInputSketch,
   FormInputSlotCols,
   FormInputSlots,
 } from "@/constants/propsVFormik/formInput.ts";
@@ -34,10 +33,9 @@ const usage2 = `
       <h1>FormInput component</h1>
       <p>
         The <code>FormInput</code> component is a reusable input field designed for integration with
-        Formik, a popular form management library. It handles field value updates, validation
-        errors, and accessibility attributes automatically. With support for customization through
-        props like type, label, placeholder, and additional inputProps, it ensures consistent
-        styling and behavior across forms while simplifying form logic.
+        <code>useFormik</code> composable. It handles field value updates, validation errors, and
+        accessibility attributes automatically. With support for customization through props, it
+        ensures consistent styling and behavior across forms while simplifying form logic.
       </p>
     </section>
 
@@ -46,12 +44,18 @@ const usage2 = `
       <SimpleTable :columns="FormInputPropsCols" :rows="FormInputProps" />
     </section>
 
-    <section>
-      <h2>Slots</h2>
-      <SimpleTable :columns="FormInputSlotCols" :rows="FormInputSlots" />
-
-      <h4>Layout:</h4>
-      <CodeBlock :content="FormInputSketch" />
+    <section class="grid grid-cols-3 gap-6">
+      <div class="col-span-3 md:col-span-2">
+        <h2>Slots</h2>
+        <SimpleTable :columns="FormInputSlotCols" :rows="FormInputSlots" />
+      </div>
+      <div class="col-span-3 md:col-span-1">
+        <img
+          src="../../../assets/pngs/form_input_schema.png"
+          alt="FormInput Sketch"
+          class="h-[400px] w-auto"
+        />
+      </div>
     </section>
 
     <section>
@@ -59,7 +63,7 @@ const usage2 = `
 
       <CodeBlock :content="usage" />
 
-      <h4>If your field has array of values then you can use the <code>name</code> like:</h4>
+      <p>If your field has array of values then you can use the <code>name</code> like:</p>
       <CodeBlock :content="usage2" />
     </section>
   </div>
