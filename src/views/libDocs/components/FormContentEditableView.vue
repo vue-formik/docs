@@ -65,6 +65,67 @@ const usage2 = `
       <p>If your field has array of values then you can use the <code>name</code> like:</p>
       <CodeBlock :content="usage2" />
     </section>
+
+    <section>
+      <h2>Class Naming Style</h2>
+    </section>
+    <section>
+      <ol class="list-decimal">
+        <li>
+          <strong>Base Class:</strong> The base class for this component is <code>vf-field</code>.
+          It acts as the primary identifier for the component and provides a foundation for
+          additional styles.
+        </li>
+        <li>
+          <strong>Modifier Classes:</strong> These classes modify the appearance or behavior of the
+          base component:
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf-content-editable-field</code>: Applied to indicate the component is a
+              content-editable field.
+            </li>
+            <li>
+              <code>vf-field--error</code>: Added when the formik validation detects a field error.
+            </li>
+            <li><code>vf-field--disabled</code>: Added when the field is in a disabled state.</li>
+            <li><code>vf-field--readonly</code>: Applied when the field is set to read-only.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Input Element Classes:</strong> Classes specific to the <code>div</code> acting as
+          the content-editable input:
+          <ul class="my-4 list-disc">
+            <li><code>vf-input--error</code>: Indicates an error in the input field.</li>
+            <li>
+              <code>vf-input--placeholder</code>: Used when the input is empty and the placeholder
+              is visible.
+            </li>
+            <li><code>vf-input--disabled</code>: Marks the input as disabled.</li>
+            <li><code>vf-input--readonly</code>: Marks the input as read-only.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Error Message Class:</strong>
+          <ul class="my-4 list-disc">
+            <li>
+              <code>vf--error</code>: Used for displaying error messages below the input field.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Dynamic Behavior:</strong> Classes are applied conditionally based on the
+          component's props and state:
+          <ul class="my-4 list-disc">
+            <li>Error-related classes depend on <code>formik.hasFieldError(name)</code>.</li>
+            <li>Placeholder-related classes depend on <code>!hasValue</code>.</li>
+            <li>
+              Disabled and read-only classes depend on the <code>disabled</code> and
+              <code>readonly</code> props.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
   </div>
 </template>
 
