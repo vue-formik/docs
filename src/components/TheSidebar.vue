@@ -1,7 +1,7 @@
 <template>
   <aside class="the-sidebar">
     <ul class="flex flex-col gap-2">
-      <template v-for="(item, index) in navItems" :key="index">
+      <template v-for="(item, index) in TheSidebarItems" :key="index">
         <li>
           <p>
             {{ item.name }}
@@ -22,33 +22,11 @@
 </template>
 
 <script setup lang="ts">
+import TheSidebarItems from "@/constants/theSidebarItems.ts";
+
 defineProps<{
   toggleSidebar: () => void;
 }>();
-
-const navItems = [
-  {
-    name: "Getting Started",
-    children: [
-      { name: "Introduction", path: "/getting-started/introduction" },
-      { name: "Quick Start", path: "/getting-started/quick-start" },
-    ],
-  },
-  {
-    name: "Composable",
-    children: [{ name: "useFormik", path: "/docs/composable/use-formik" }],
-  },
-  {
-    name: "Components",
-    children: [
-      { name: "Why Components?", path: "/docs/components/why" },
-      { name: "Input Field", path: "/docs/components/input-field" },
-      { name: "Select Field", path: "/docs/components/select-field" },
-      { name: "Textarea Field", path: "/docs/components/textarea-field" },
-      { name: "Content Editable", path: "/docs/components/contenteditable-field" },
-    ],
-  },
-];
 </script>
 
 <style lang="sass">

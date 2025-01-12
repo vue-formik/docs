@@ -10,21 +10,21 @@ export const UseFormikParameterColumns = [
 export const UseFormikParameters = [
   {
     name: "initialValues",
-    type: "object",
+    type: "object: <T>",
     required: true,
     default: "-",
     description: "An object containing the initial values for the form fields.",
   },
   {
     name: "validationSchema",
-    type: "ObjectSchema or object",
+    type: "FormikValidationSchema<T>",
     required: false,
     default: "-",
     description: "A yup schema or a validation rules object for validating the form fields.",
   },
   {
     name: "onSubmit",
-    type: "(values, helpers) => void",
+    type: "FormikOnSubmit<T>",
     required: false,
     default: "-",
     description:
@@ -55,7 +55,7 @@ export const UseFormikReturnedPropertiesColumns = [
 export const UseFormikReturnedProperties = [
   {
     name: "values",
-    type: "reactive<object>",
+    type: "reactive<T>",
     description: "Reactive object containing the current values of form fields.",
   },
   {

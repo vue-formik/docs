@@ -1,28 +1,68 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
+import {
+  FormInputProps,
+  FormInputPropsCols,
+  FormInputSketch,
+  FormInputSlotCols,
+  FormInputSlots,
+} from "@/constants/propsVFormik/formInput.ts";
+import CodeBlock from "@/components/core/CodeBlock.vue";
+
+const usage = `
+<FormInput
+  :formik="formik"
+  name="name"
+  label="Name:"
+  type="text"
+  placeholder="Enter your name"
+/>
+`;
+const usage2 = `
+<FormInput
+  :formik="formik"
+  :name="\`contacts[\${index}].code\`"
+  type="tel"
+  :placeholder="\`Enter contact number \${index + 1}\`"
+/>
+`;
+</script>
 
 <template>
-  <section class="input-field-vue">
-    <h1>Input Field</h1>
-    <p>
-      The <code>InputFieldVue</code> component is a simple input field that can be used to collect
-      user input. It is designed to work with the <code>useFormik</code> composable.
-    </p>
-    <p>The <code>InputFieldVue</code> component accepts the following props:</p>
-    <ul>
-      <li><code>name</code> - The name of the input field.</li>
-      <li><code>label</code> - The label for the input field.</li>
-      <li><code>type</code> - The type of the input field (e.g., text, email, password).</li>
-      <li><code>placeholder</code> - The placeholder text for the input field.</li>
-      <li><code>value</code> - The value of the input field.</li>
-      <li><code>error</code> - The error message for the input field.</li>
-      <li><code>onChange</code> - The event handler for the input field.</li>
-    </ul>
-    <p>The <code>InputFieldVue</code> component emits the following events:</p>
-    <ul>
-      <li><code>input</code> - The event is emitted when the value of the input field changes.</li>
-    </ul>
-    <p>The <code>InputFieldVue</code> component is used as follows:</p>
-  </section>
+  <div class="info_page">
+    <section>
+      <h1>FormInput component</h1>
+      <p>
+        The <code>FormInput</code> component is a reusable input field designed for integration with
+        Formik, a popular form management library. It handles field value updates, validation
+        errors, and accessibility attributes automatically. With support for customization through
+        props like type, label, placeholder, and additional inputProps, it ensures consistent
+        styling and behavior across forms while simplifying form logic.
+      </p>
+    </section>
+
+    <section>
+      <h2>Props:</h2>
+      <SimpleTable :columns="FormInputPropsCols" :rows="FormInputProps" />
+    </section>
+
+    <section>
+      <h2>Slots</h2>
+      <SimpleTable :columns="FormInputSlotCols" :rows="FormInputSlots" />
+
+      <h4>Layout:</h4>
+      <CodeBlock :content="FormInputSketch" />
+    </section>
+
+    <section>
+      <h2>Usage:</h2>
+
+      <CodeBlock :content="usage" />
+
+      <h4>If your field has array of values then you can use the <code>name</code> like:</h4>
+      <CodeBlock :content="usage2" />
+    </section>
+  </div>
 </template>
 
 <style scoped lang="sass"></style>

@@ -1,7 +1,9 @@
 .info_page
   @apply px-8 pt-8 pb-48
-  section
+  section:not(.vf-table-root)
     @apply mb-10
+  section.vf-table-root
+    @apply mb-8
   h1
     @apply text-3xl font-medium text-start mb-6
   h2
@@ -20,12 +22,16 @@
     @apply p-4 rounded-lg text-xs
 
   blockquote
-    @apply p-2 border-l-4 rounded-r-lg border-primary
+    @apply p-4 border-l-4 rounded-r-lg border-primary
     @apply bg-gray-800 text-gray-200
+
+  blockquote
     li
-      @apply mb-1
-    ol, ul
-      @apply ml-2
+      @apply mb-1 ml-1
+
+  article
+    li
+      @apply mb-2 ml-0
 
 
   article
@@ -34,7 +40,8 @@
     @apply rounded-lg break-all
 
   p, blockquote, ol, ul, h1, h2, h3, h4, h5, article
-    @apply mb-4
+    &:not(:last-child)
+      @apply mb-4
     code
       @apply bg-gray-800 text-gray-200 p-1 rounded-lg
       @apply border border-gray-600
