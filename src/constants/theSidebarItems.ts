@@ -4,7 +4,6 @@ export default [
     children: [
       { name: "Introduction", path: "/getting-started/introduction" },
       { name: "Quick Start", path: "/getting-started/quick-start" },
-      { name: "Quick Start", path: "/getting-started/why" },
     ],
   },
   {

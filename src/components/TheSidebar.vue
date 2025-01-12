@@ -1,5 +1,18 @@
 <template>
-  <aside class="the-sidebar">
+  <aside
+    class="the-sidebar"
+    :style="{
+      paddingLeft: isMobile ? '2rem' : '1rem',
+    }"
+  >
+    <button
+      v-if="isMobile"
+      class="absolute top-1 right-1 text-xs"
+      title="Close Sidebar"
+      @click="toggleSidebar"
+    >
+      <span>Close</span>
+    </button>
     <ul class="flex flex-col gap-2">
       <template v-for="(item, index) in TheSidebarItems" :key="index">
         <li>
@@ -26,20 +39,22 @@ import TheSidebarItems from "@/constants/theSidebarItems.ts";
 
 defineProps<{
   toggleSidebar: () => void;
+  isMobile: boolean;
 }>();
 </script>
 
 <style lang="sass">
 .the-sidebar
-  @apply pt-4 pl-2
+  @apply pt-4 relative
   @apply border-r border-surface-b
 
   ul
     li
-      @apply px-2 text-sm
+      @apply mb-1
       & > p
-        @apply mt-5 mb-1.5 text-xs
+        @apply mt-5 mb-2 text-xs
       a
+        @apply px-2 py-1 text-sm
         @apply text-gray-400 rounded
         @apply transition-all duration-200 ease-in-out
         &:hover
@@ -48,6 +63,4 @@ defineProps<{
           @apply text-white brightness-90
         &.router-link-exact-active
           @apply text-primary
-      ul li
-        @apply mb-1.5
 </style>
