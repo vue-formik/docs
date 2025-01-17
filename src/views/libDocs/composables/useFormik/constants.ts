@@ -85,6 +85,16 @@ export const UseFormikReturnedProperties = [
     description: "Ref indicating if the form is in the submitting state.",
   },
   {
+    name: "isValidating",
+    type: "ref<boolean>",
+    description: "Ref indicating if the form is in the validating state.",
+  },
+  {
+    name: "submitCount",
+    type: "ref<number>",
+    description: "Ref containing the number of form submission attempts.",
+  },
+  {
     name: "fieldHandlers",
     type: "computed<object>",
     description: "Handlers (onBlur and onChange) for form fields.",
