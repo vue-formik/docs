@@ -35,7 +35,7 @@
 
           <button
             type="button"
-            class="secondary-outlined-btn"
+            class="secondary-outlined-btn size-11"
             title="Remove contact"
             :disabled="formik.values.contacts.length <= 1"
             @click="
@@ -53,7 +53,7 @@
       </div>
       <button
         type="button"
-        class="w-fit mt-8 secondary-outlined-btn"
+        class="secondary-outlined-btn mt-8 w-fit"
         @click="
           () => {
             formik.setValues({
@@ -100,7 +100,7 @@
 
         <button
           type="button"
-          class="secondary-outlined-btn"
+          class="secondary-outlined-btn size-11"
           title="Remove address"
           :disabled="formik.values.addresses.length <= 1"
           @click="

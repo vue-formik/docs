@@ -13,7 +13,16 @@
     >
       <span>Close</span>
     </button>
-    <ul class="flex flex-col gap-2">
+
+    <div class="sm:hidden flex items-center gap-2 my-4">
+      <router-link to="/" class="!no-underline">
+        <img src="/logo.png" alt="Logo" class="size-8 rounded-full" />
+      </router-link>
+
+      <h1 class="text-lg">Vue Formik</h1>
+    </div>
+
+    <ul class="flex flex-col gap-4">
       <template v-for="(item, index) in TheSidebarItems" :key="index">
         <li>
           <p>

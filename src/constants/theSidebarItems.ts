@@ -21,4 +21,12 @@ export default [
       { name: "FormikForm", path: "/docs/components/formik-form" },
     ],
   },
+  {
+    name: "Project",
+    children: [
+      { name: "About", path: "/about" },
+      { name: "Example Usage", path: "/example-usage" },
+      { name: "Playground", path: "/playground" },
+    ],
+  },
 ];

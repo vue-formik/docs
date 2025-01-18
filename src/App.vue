@@ -1,7 +1,7 @@
 <template>
   <TheAppbar ref="appBarRef" :toggle-sidebar="toggleSidebar" />
   <TheSidebar
-    v-if="showSidebar"
+    v-if="showSidebar || screenWidth < 640"
     :class="{
       show: sidebarState,
     }"
@@ -31,6 +31,7 @@ import TheAppbar from "@/components/TheAppbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import { useRouter } from "vue-router";
 import TheSidebar from "@/components/TheSidebar.vue";
+
 const router = useRouter();
 
 const sidebarState = ref(false);

@@ -49,12 +49,6 @@
         remains clean and modular. Updates to shared logic, such as validation rules, can be applied
         in one place rather than across multiple input fields.
       </p>
-      <p>
-        Additionally, components make collaboration among team members easier. Designers and
-        developers can focus on improving individual components without worrying about the larger
-        application structure. This modularity also facilitates testing, as each component can be
-        independently verified for its functionality.
-      </p>
 
       <p>We will explore more about the power of components in the next section.</p>
     </section>
