@@ -30,7 +30,7 @@
     <p class="py-2 text-sm">
       <span> You can find the source code for this example on </span>
       <a
-        href="https://github.com/vue-formik/docs/blob/main/src/views/HomeView.vue"
+        href="https://github.com/vue-formik/docs/blob/main/src/views/DemoView.vue"
         target="_blank"
         rel="noopener noreferrer"
         class="text-blue-500 underline"
