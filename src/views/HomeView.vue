@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col justify-center grow text-center h-full md:h-[90vh] px-4 sm:px-0">
+  <section class="flex flex-col justify-center grow text-center min-h-[90vh] px-4 md:px-0">
     <header class="mt-12 sm:mt-0 mb-12">
       <h1 class="text-gradient max-w-[650px] mx-auto">Vue Formik: Making Forms a Breeze</h1>
       <p class="text-lg">Vue Formik is a form library for Vue.js that helps you with your forms.</p>
@@ -24,7 +24,7 @@
     </section>
 
     <section class="flex items-center justify-center mb-12 sm:mb-0">
-      <ul class="flex flex-wrap gap-4 items-start text-start">
+      <ul class="flex flex-wrap gap-4 items-start text-start justify-center">
         <li class="p-4 rounded max-w-[200px]">
           <h4 class="font-semibold mb-3">Battle Tested</h4>
           <p class="text-sm">
