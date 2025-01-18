@@ -1,6 +1,6 @@
 <template>
   <section class="pg-view">
-    <h2>Simple form validation with Vue Formik</h2>
+    <h2 class="!text-xl !pb-1">Simple form validation with Vue Formik</h2>
     <hr class="mb-6" />
 
     <div class="mb-4 border-b">

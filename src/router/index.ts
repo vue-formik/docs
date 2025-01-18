@@ -11,8 +11,8 @@ const router = createRouter({
       },
     },
     {
-      path: "/playground",
-      component: () => import("@/views/PlaygroundView.vue"),
+      path: "/demo",
+      component: () => import("@/views/DemoView.vue"),
       meta: {
         footer: true,
       },

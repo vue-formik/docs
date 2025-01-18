@@ -25,8 +25,11 @@ export default [
     name: "Project",
     children: [
       { name: "About", path: "/about" },
-      { name: "Example Usage", path: "/example-usage" },
-      { name: "Playground", path: "/playground" },
+      { name: "Demo", path: "/demo" },
+      {
+        name: "Playground",
+        path: "https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2Fcomponents%2FHelloWorld.vue",
+      },
     ],
   },
 ];

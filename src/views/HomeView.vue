@@ -13,7 +13,13 @@
         <router-link class="secondary-btn md" to="/getting-started/quick-start">
           Get Started
         </router-link>
-        <router-link class="secondary-btn md" to="/playground">Playground</router-link>
+        <a
+          class="secondary-btn md"
+          target="_blank"
+          href="https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2Fcomponents%2FHelloWorld.vue"
+        >
+          Playground
+        </a>
       </div>
     </section>
 

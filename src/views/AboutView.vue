@@ -60,7 +60,7 @@ const links = [
   },
   {
     title: "Playground",
-    url: "/playground",
+    url: "https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2Fcomponents%2FHelloWorld.vue",
     color: "text-blue-500",
   },
   {
