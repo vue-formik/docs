@@ -3,6 +3,8 @@ interface IColumn {
   field: string;
   code?: boolean;
   align?: "start" | "justify" | "end" | "center";
+  default?: string | boolean;
+  width?: number;
 }
 interface IRow {
   [key: string]: string | boolean;

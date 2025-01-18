@@ -50,3 +50,26 @@ const formik = useFormik({
 });
 </script>
 `;
+
+export const ExampleWithProvideInject = `
+<template>
+  <FormikForm>
+    <FormInput name="name" label="Name" />
+  </FormikForm>
+</template>
+<script setup lang="ts">
+import { provide, ref } from "vue";
+import { useFormik, FormInput, FormikForm } from "vue-formik";
+
+const formik = useFormik({
+  initialValues: {
+    name: "",
+  },
+  onSubmit: (values) => {
+    console.log(values);
+  },
+});
+
+provide("formik", formik);
+</script>
+`;

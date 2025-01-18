@@ -6,7 +6,7 @@ const props = defineProps<{
   row: IRow;
   column: IColumn;
 }>();
-const fieldValue = computed(() => props.row[props.column.field]);
+const fieldValue = computed(() => props.row[props.column.field] ?? props.column.default);
 
 const wrapWithCode = computed(() => {
   if (props.column.code) {

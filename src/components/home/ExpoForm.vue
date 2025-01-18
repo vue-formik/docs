@@ -1,15 +1,8 @@
 <template>
   <form class="border border-gray-500 rounded-md p-4" @submit="(e) => {}">
-    <FormInput
-      :formik="formik"
-      name="name"
-      label="Name:"
-      type="text"
-      placeholder="Enter your name"
-    />
+    <FormInput name="name" label="Name:" type="text" placeholder="Enter your name" />
 
     <FormInput
-      :formik="formik"
       name="email"
       label="Email Address:"
       type="email"
@@ -21,13 +14,11 @@
       <div class="flex flex-col gap-2">
         <div v-for="(_, index) in formik.values.contacts" :key="index" class="flex gap-4">
           <FormInput
-            :formik="formik"
             :name="`contacts[${index}].code`"
             type="tel"
             :placeholder="`Enter contact number ${index + 1}`"
           />
           <FormInput
-            :formik="formik"
             :name="`contacts[${index}].number`"
             type="tel"
             :placeholder="`Enter contact number ${index + 1}`"
@@ -68,20 +59,13 @@
     </div>
 
     <FormSelectField
-      :formik="formik"
       name="sex"
       label="Sex:"
       :options="sexOptions"
       placeholder="Select your gender"
     />
 
-    <FormTextArea
-      :formik="formik"
-      name="message"
-      label="Message:"
-      placeholder="Enter your message"
-      rows="4"
-    />
+    <FormTextArea name="message" label="Message:" placeholder="Enter your message" rows="4" />
 
     <!-- addresses -->
     <div class="addresses flex flex-col gap-2">
@@ -92,7 +76,6 @@
         class="flex items-start gap-4"
       >
         <FormInput
-          :formik="formik"
           :name="`addresses[${index}]`"
           type="text"
           :placeholder="`Enter address line ${index + 1}`"
@@ -154,6 +137,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormInput, FormSelectField, FormTextArea } from "vue-formik";
 import useFormikForm from "@/composables/formik.ts";
+import { provide } from "vue";
 
 const props = defineProps<{
   validationSchema: any;
@@ -167,4 +151,6 @@ const sexOptions = [
 ];
 
 const { formik } = useFormikForm(props.validationSchema);
+
+provide("formik", formik);
 </script>

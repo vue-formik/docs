@@ -49,7 +49,10 @@ const classesDict = computed(() => {
           <th
             v-for="column in columns"
             :key="column.field"
-            :style="{ textAlign: column.align ?? 'start' }"
+            :style="{
+              textAlign: column.align ?? 'start',
+              width: column.width ?? 'auto',
+            }"
             :class="classesDict.th"
           >
             {{ column.header }}

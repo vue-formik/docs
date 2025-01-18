@@ -41,6 +41,20 @@
         error handling for us.
       </p>
 
+      <h3>Benefits of context (provide/inject)</h3>
+      <p>
+        Did you notice that we've to pass <code>formik</code> prop to each input field? This is
+        where the power of Vue's provide/inject comes into play and component based approach shines.
+        We can provide the formik context at the top level of our form.
+      </p>
+      <p>
+        Every exported component implements a formik context that is configured to take an injection
+        of formik instance. This way, we can inject the formik instance into the component tree and
+        access it from any child component without having to pass it down as a prop.
+      </p>
+
+      <CodeBlock :content="ExampleWithProvideInject" />
+
       <h3>Comparison: Without vs. With Components</h3>
       <p>
         Using components brings a clear advantage in terms of readability, reusability, and ease of
@@ -63,5 +77,6 @@ import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import {
   ExampleWithComponents,
   ExampleWithoutComponents,
+  ExampleWithProvideInject,
 } from "@/constants/examples/whyComponents.ts";
 </script>
