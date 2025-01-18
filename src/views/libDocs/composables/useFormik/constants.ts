@@ -23,6 +23,13 @@ export const UseFormikParameters = [
     description: "A yup schema or a validation rules object for validating the form fields.",
   },
   {
+    name: "mode",
+    type: "YUP|JOI|JOD|CUSTOM<string>",
+    required: false,
+    default: "CUSTOM",
+    description: "The mode to use for validation.",
+  },
+  {
     name: "onSubmit",
     type: "FormikOnSubmit<T>",
     required: false,
