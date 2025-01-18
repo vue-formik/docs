@@ -16,7 +16,7 @@
         <a
           class="secondary-btn md"
           target="_blank"
-          href="https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2Fcomponents%2FHelloWorld.vue"
+          href="https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2FApp.vue"
         >
           Playground
         </a>
