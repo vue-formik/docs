@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
 import { FormTextareaPropsCols } from "@/constants/propsVFormik/formTextarea.ts";
 </script>
@@ -33,5 +34,7 @@ import { FormTextareaPropsCols } from "@/constants/propsVFormik/formTextarea.ts"
 
       <p><strong>default</strong> - Slot for form fields.</p>
     </section>
+
+    <InfoPageFooter />
   </div>
 </template>

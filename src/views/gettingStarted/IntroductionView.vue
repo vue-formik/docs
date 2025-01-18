@@ -60,6 +60,8 @@
         </li>
       </ol>
     </blockquote>
+
+    <InfoPageFooter />
   </section>
 </template>
 
@@ -67,4 +69,5 @@
 import minimalExample from "@/constants/examples/minimalExample";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoIcon from "@/components/svgIcons/InfoIcon.vue";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 </script>

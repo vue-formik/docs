@@ -21,7 +21,9 @@
       <h2>Installation</h2>
 
       <p>
-        You can install Vue-Formik using npm or yarn. Here is the command to install it using npm:
+        You can install Vue-Formik using npm or yarn. Here is the command to install it using
+        <strong>{{ activeTab }}</strong
+        >:
       </p>
 
       <div>
@@ -32,7 +34,7 @@
             class="install-command"
             :class="{
               'border-b-2 !rounded-none first:!rounded-tl-lg last:!rounded-tr-lg': true,
-              'bg-[#242424] border-primary': activeTab === packageManager,
+              'bg-[#242424] border-primary z-10': activeTab === packageManager,
               'bg-[#2f2f2f] border-secondary': activeTab !== packageManager,
             }"
             @click="activeTab = packageManager"
@@ -40,7 +42,7 @@
             {{ packageManager }}
           </button>
         </div>
-        <CodeBlock class="mt-0" :content="installCommands[activeTab]" />
+        <CodeBlock class="mt-0 [&_pre]:!rounded-tl-none" :content="installCommands[activeTab]" />
       </div>
 
       <p>
@@ -60,12 +62,15 @@
 
       <CodeBlock :content="minimalExample" />
     </section>
+
+    <InfoPageFooter />
   </section>
 </template>
 
 <script setup lang="ts">
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import minimalExample from "@/constants/examples/minimalExample.ts";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import { ref } from "vue";
 
 const installCommands = {

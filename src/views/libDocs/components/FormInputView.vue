@@ -7,6 +7,7 @@ import {
   FormInputSlots,
 } from "@/constants/propsVFormik/formInput.ts";
 import CodeBlock from "@/components/core/CodeBlock.vue";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 
 const usage = `
 <FormInput
@@ -155,6 +156,8 @@ const usage2 = `
         </li>
       </ol>
     </section>
+
+    <InfoPageFooter />
   </div>
 </template>
 

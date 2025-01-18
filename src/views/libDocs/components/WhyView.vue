@@ -52,11 +52,14 @@
 
       <p>We will explore more about the power of components in the next section.</p>
     </section>
+
+    <InfoPageFooter />
   </section>
 </template>
 
 <script setup lang="ts">
 import CodeBlock from "@/components/core/CodeBlock.vue";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import {
   ExampleWithComponents,
   ExampleWithoutComponents,

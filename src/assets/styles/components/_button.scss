@@ -38,12 +38,6 @@ a {
     @apply brightness-100 scale-[0.98];
   }
   @apply transition-all duration-200 ease-in-out;
-
-  &:focus,
-  &:focus-visible,
-  &:focus-within {
-    @apply outline-none ring-2 ring-on-secondary;
-  }
 }
 
 a {

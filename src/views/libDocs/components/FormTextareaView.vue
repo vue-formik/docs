@@ -3,6 +3,7 @@ import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
 import { FormInputSlotCols, FormInputSlots } from "@/constants/propsVFormik/formInput.ts";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import { FormTextareaProps, FormTextareaPropsCols } from "@/constants/propsVFormik/formTextarea.ts";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 
 const usage1 = `
 <FormTextareaField
@@ -121,6 +122,8 @@ const usage2 = `
         </li>
       </ol>
     </section>
+
+    <InfoPageFooter />
   </div>
 </template>
 

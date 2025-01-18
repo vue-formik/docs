@@ -6,6 +6,7 @@ import {
   FormContentEditableProps,
   FormContentEditablePropsCols,
 } from "@/constants/propsVFormik/formContentEditable.ts";
+import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 
 const usage1 = `
 <FormContentEditableField
@@ -126,6 +127,8 @@ const usage2 = `
         </li>
       </ol>
     </section>
+
+    <InfoPageFooter />
   </div>
 </template>
 
