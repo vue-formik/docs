@@ -1,3 +1,5 @@
+import Links from "@/constants/Links.ts";
+
 export default [
   {
     name: "Getting Started",
@@ -31,7 +33,7 @@ export default [
       { name: "Demo", path: "/demo" },
       {
         name: "Playground",
-        path: "https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2Fcomponents%2FHelloWorld.vue",
+        path: Links.Playground,
       },
     ],
   },

@@ -45,44 +45,45 @@
 
 <script setup lang="ts">
 import pkgJson from "../../package.json";
+import Links from "@/constants/Links.ts";
 const { dependencies } = pkgJson;
 const version = dependencies["vue-formik"]?.replace(/^\^/, "");
 const links = [
   {
     title: "Github",
-    url: "https://github.com/vue-formik/vue-formik",
+    url: Links.Github,
     color: "text-gray-100",
   },
   {
     title: "Documentation",
-    url: "https://vue-formik.netlify.app",
+    url: Links.Documentation,
     color: "text-green-500",
   },
   {
     title: "Playground",
-    url: "https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2FApp.vue",
+    url: Links.Playground,
     color: "text-blue-500",
   },
   {
     title: "NPM",
-    url: "https://www.npmjs.com/package/vue-formik",
+    url: Links.NPM,
     color: "text-red-500",
   },
   {
     title: "Issues",
-    url: "https://github.com/vue-formik/vue-formik/issues",
+    url: Links.Issues,
     color: "text-yellow-500",
   },
   {
     title: "Pull Requests",
-    url: "https://github.com/vue-formik/vue-formik/pulls",
+    url: Links.PullRequests,
     color: "text-purple-500",
   },
 ];
 const author = {
   name: "Kiran Parajuli",
   email: "kiranparajuli589@gmail.com",
-  linkedIn: "https://www.linkedin.com/in/kiranparajuli589/",
+  linkedIn: Links.KiranLinkedIn,
 };
 const birth = "2024-12-28T18:22:01.000Z";
 const fromNow = new Date(birth).toLocaleString();

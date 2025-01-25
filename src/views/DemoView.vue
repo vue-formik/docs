@@ -36,7 +36,7 @@
     <p class="py-2 text-sm">
       <span> You can find the source code for this example on </span>
       <a
-        href="https://github.com/vue-formik/docs/blob/main/src/views/DemoView.vue"
+        :href="Links.DemoViewGHPage"
         target="_blank"
         rel="noopener noreferrer"
         class="text-blue-500 underline"
@@ -53,6 +53,7 @@ import { onBeforeMount, ref } from "vue";
 import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";
 import ExpoForm from "@/components/home/ExpoForm.vue";
 import { DemoTabs } from "@/constants/demo.ts";
+import Links from "@/constants/Links.ts";
 
 onBeforeMount(() => {
   document.title = "Home | Vue Formik";

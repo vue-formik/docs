@@ -18,7 +18,7 @@
       <p>
         Vue Formik is a powerful library for Vue.js that simplifies form handling by providing a
         more structured approach to managing HTML forms. Inspired by the popular React library
-        <a href="https://formik.org" target="_blank" title="Formik">Formik</a>, Vue Formik leverages
+        <a :href="Links.Formik" target="_blank" title="Formik">Formik</a>, Vue Formik leverages
         Vue's built-in reactivity system to streamline form development and management. 💡
       </p>
     </section>
@@ -48,10 +48,9 @@
         </li>
         <li>
           You can create custom validation functions or integrate a library like
-          <a href="https://github.com/jquense/yup" target="_blank" title="Yup" class="text-primary"
-            >Yup</a
-          >, <a href="https://joi.dev/" target="_blank" title="Joi" class="text-primary">Joi</a>, or
-          <a href="https://zod.dev/" target="_blank" title="Zod" class="text-primary">Zod</a>
+          <a :href="Links.Yup" target="_blank" title="Yup" class="text-primary">Yup</a>,
+          <a :href="Links.Joi" target="_blank" title="Joi" class="text-primary">Joi</a>, or
+          <a :href="Links.Zod" target="_blank" title="Zod" class="text-primary">Zod</a>
 
           for schema-based validation.
         </li>
@@ -72,4 +71,5 @@ import minimalExample from "@/constants/examples/minimalExample";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoIcon from "@/components/svgIcons/InfoIcon.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
+import Links from "@/constants/Links.ts";
 </script>

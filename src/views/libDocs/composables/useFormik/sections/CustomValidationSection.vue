@@ -36,7 +36,7 @@
 
     <p>
       For more complex validation rules, check out the
-      <router-link to="/playground">Playground</router-link> section. 🔗
+      <a :href="Links.Playground" target="_blank">playground</a> section. 🔗
     </p>
   </section>
 </template>
@@ -47,4 +47,5 @@ import {
   CustomValidationWithEmailArrayExample,
 } from "@/constants/examples/validationExamples.ts";
 import CodeBlock from "@/components/core/CodeBlock.vue";
+import Links from "@/constants/Links.ts";
 </script>

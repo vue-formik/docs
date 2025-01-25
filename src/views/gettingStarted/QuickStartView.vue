@@ -11,8 +11,8 @@
         <h4>✨ Try Vue-Formik Online</h4>
         <p>
           To quickly try out Vue-Formik, you can use the online
-          <router-link to="/playground">playground</router-link>. It is a code editor that allows
-          you to write Vue-Formik code and see the results in real-time.
+          <a :href="Links.Playground" target="_blank">playground</a>. It is a code editor that
+          allows you to write Vue-Formik code and see the results in real-time.
         </p>
       </article>
     </section>
@@ -72,6 +72,7 @@ import CodeBlock from "@/components/core/CodeBlock.vue";
 import minimalExample from "@/constants/examples/minimalExample.ts";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import { ref } from "vue";
+import Links from "@/constants/Links.ts";
 
 const installCommands = {
   npm: `npm i vue-formik`,

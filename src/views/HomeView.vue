@@ -13,13 +13,7 @@
         <router-link class="secondary-btn md" to="/getting-started/quick-start">
           Get Started
         </router-link>
-        <a
-          class="secondary-btn md"
-          target="_blank"
-          href="https://stackblitz.com/edit/vitejs-vite-px7jzkdy?file=src%2FApp.vue"
-        >
-          Playground
-        </a>
+        <a class="secondary-btn md" target="_blank" :href="Links.Playground"> Playground </a>
       </div>
     </section>
 
@@ -46,7 +40,9 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Links from "@/constants/Links.js";
+</script>
 
 <style lang="scss">
 .text-gradient {
