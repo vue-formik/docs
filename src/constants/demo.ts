@@ -1,11 +1,16 @@
 import * as Yup from "yup";
 
+export const DemoTabValues = {
+  CUSTOM: 1,
+  YUP: 0,
+};
+
 interface IContact {
   code: string;
   number: string;
 }
 
-const InitialValues = {
+export const InitialValues = {
   name: "",
   email: "",
   contacts: [{ code: "", number: "" }],
@@ -14,7 +19,7 @@ const InitialValues = {
   addresses: [""],
 };
 
-const ValidationSchema = {
+export const ValidationSchema = {
   name: (value: string) => {
     if (!value) {
       return "Name is required";
@@ -80,13 +85,12 @@ const ValidationSchema = {
         errs[i] = "Address must be at most 50 characters";
       }
     }
-    console.log(errs);
 
     return errs.length ? errs : undefined;
   },
 };
 
-const ValidationSchemaYup = Yup.object().shape({
+export const ValidationSchemaYup = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   contacts: Yup.array()
@@ -117,4 +121,7 @@ const ValidationSchemaYup = Yup.object().shape({
     .default([""]), // Ensures addresses array is initialized
 });
 
-export { InitialValues, ValidationSchemaYup, ValidationSchema };
+export const DemoTabs = [
+  { name: "Custom", value: DemoTabValues.CUSTOM, schema: ValidationSchema },
+  { name: "Yup", value: DemoTabValues.YUP, schema: ValidationSchemaYup },
+];

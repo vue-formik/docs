@@ -8,7 +8,10 @@ export default [
   },
   {
     name: "Composable",
-    children: [{ name: "useFormik", path: "/docs/composable/use-formik" }],
+    children: [
+      { name: "useFormik", path: "/docs/composable/use-formik" },
+      { name: "useFieldArray", path: "/docs/composable/use-field-array" },
+    ],
   },
   {
     name: "Components",

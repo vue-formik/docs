@@ -5,24 +5,30 @@
 
     <div class="mb-4 border-b">
       <button
-        :class="{ 'bg-gray-800 text-white': tab === 1 }"
-        class="py-2 px-4 mr-2"
-        @click="() => (tab = 1)"
+        v-for="tabItem in DemoTabs"
+        :key="tabItem.value"
+        :class="{ 'bg-gray-800 text-white': tab === tabItem.value }"
+        class="py-2 px-4 mr-2 last:mr-0"
+        @click="() => (tab = tabItem.value)"
       >
-        Custom
+        {{ tabItem.name }}
       </button>
-      <button
-        :class="{ 'bg-gray-800 text-white': tab === 0 }"
-        class="py-2 px-4 mr-2"
-        @click="() => (tab = 0)"
-      >
-        Yup
-      </button>
+
+      <label for="validateOnMount">
+        <input id="validateOnMount" v-model="validateOnMount" type="checkbox" class="ml-4" />
+        <span class="ml-2">Validate on mount</span>
+      </label>
     </div>
 
     <div class="pg-view__content">
-      <ExpoForm v-if="tab === 1" :validation-schema="ValidationSchema" />
-      <ExpoForm v-else :validation-schema="ValidationSchemaYup" />
+      <template v-for="tabItem in DemoTabs" :key="tabItem.value">
+        <ExpoForm
+          v-if="tab === tabItem.value"
+          :validation-schema="tabItem.schema"
+          :value="tab"
+          :validate-on-mount="validateOnMount"
+        />
+      </template>
 
       <ValidationSchemaPreview />
     </div>
@@ -46,11 +52,12 @@
 import { onBeforeMount, ref } from "vue";
 import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";
 import ExpoForm from "@/components/home/ExpoForm.vue";
-import { ValidationSchema, ValidationSchemaYup } from "@/constants/homeFormik.ts";
+import { DemoTabs } from "@/constants/demo.ts";
 
 onBeforeMount(() => {
   document.title = "Home | Vue Formik";
 });
 
-const tab = ref<number>(1);
+const tab = ref(1);
+const validateOnMount = ref(false);
 </script>

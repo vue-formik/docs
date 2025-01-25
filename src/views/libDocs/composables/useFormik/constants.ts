@@ -16,18 +16,32 @@ export const UseFormikParameters = [
     description: "An object containing the initial values for the form fields.",
   },
   {
+    name: "yupSchema",
+    type: "ObjectSchema<T>",
+    required: false,
+    default: "-",
+    description: "A yup schema for validating the form fields.",
+  },
+  {
+    name: "joiSchema",
+    type: "ObjectSchema<T>",
+    required: false,
+    default: "-",
+    description: "A joi schema for validating the form fields.",
+  },
+  {
+    name: "zodSchema",
+    type: "ZodType<T>",
+    required: false,
+    default: "-",
+    description: "A zod schema for validating the form fields.",
+  },
+  {
     name: "validationSchema",
     type: "FormikValidationSchema<T>",
     required: false,
     default: "-",
-    description: "A yup schema or a validation rules object for validating the form fields.",
-  },
-  {
-    name: "mode",
-    type: "YUP|JOI|JOD|CUSTOM<string>",
-    required: false,
-    default: "CUSTOM",
-    description: "The mode to use for validation.",
+    description: "A custom validation rules object for validating the form fields.",
   },
   {
     name: "onSubmit",
@@ -179,5 +193,10 @@ export const UseFormikReturnedMethods = [
     name: "getFieldValue",
     parameters: "(field: string): unknown",
     description: "Retrieves the current value of a specific field.",
+  },
+  {
+    name: "getFieldTouched",
+    parameters: "(field: string): boolean|undefined",
+    description: "Checks if a specific field has been touched.",
   },
 ] as IRow[];

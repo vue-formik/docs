@@ -1,5 +1,5 @@
 <template>
-  <form class="border border-gray-500 rounded-md p-4" @submit="(e) => {}">
+  <FormikForm class="border border-gray-500 rounded-md p-4">
     <FormInput name="name" label="Name:" type="text" placeholder="Enter your name" />
 
     <FormInput
@@ -29,14 +29,7 @@
             class="secondary-outlined-btn size-11"
             title="Remove contact"
             :disabled="formik.values.contacts.length <= 1"
-            @click="
-              () => {
-                formik.setValues({
-                  ...formik.values,
-                  contacts: formik.values.contacts.filter((_, i) => i !== index),
-                });
-              }
-            "
+            @click="() => fieldArray.pop('contacts', index)"
           >
             x
           </button>
@@ -45,14 +38,7 @@
       <button
         type="button"
         class="secondary-outlined-btn mt-8 w-fit"
-        @click="
-          () => {
-            formik.setValues({
-              ...formik.values,
-              contacts: [...formik.values.contacts, { code: '', number: '' }],
-            });
-          }
-        "
+        @click="() => fieldArray.push('contacts', { code: '', number: '' })"
       >
         Add contact
       </button>
@@ -86,14 +72,7 @@
           class="secondary-outlined-btn size-11"
           title="Remove address"
           :disabled="formik.values.addresses.length <= 1"
-          @click="
-            () => {
-              formik.setValues({
-                ...formik.values,
-                addresses: formik.values.addresses.filter((_, i) => i !== index),
-              });
-            }
-          "
+          @click="() => fieldArray.pop('addresses', index)"
         >
           x
         </button>
@@ -103,14 +82,7 @@
       <button
         type="button"
         class="secondary-outlined-btn"
-        @click="
-          () => {
-            formik.setValues({
-              ...formik.values,
-              addresses: [...formik.values.addresses, ''],
-            });
-          }
-        "
+        @click="() => fieldArray.push('addresses', '')"
       >
         Add address
       </button>
@@ -121,7 +93,7 @@
     <button type="submit" class="primary-btn w-fit" :disabled="!formik.isValid.value">
       Submit
     </button>
-  </form>
+  </FormikForm>
   <div class="overflow-auto border border-gray-500 p-4 rounded-md h-full text-sm">
     <pre><code>{{JSON.stringify({
           values: formik.values,
@@ -135,12 +107,21 @@
 
 <script setup lang="ts">
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FormInput, FormSelectField, FormTextArea } from "vue-formik";
-import useFormikForm from "@/composables/formik.ts";
-import { provide } from "vue";
+import {
+  FormInput,
+  FormSelectField,
+  FormTextArea,
+  useFormik,
+  FormikForm,
+  useFieldArray,
+} from "vue-formik";
+import { computed, provide } from "vue";
+import { DemoTabValues, InitialValues } from "@/constants/demo.ts";
 
 const props = defineProps<{
   validationSchema: any;
+  value: number;
+  validateOnMount: boolean;
 }>();
 
 const sexOptions = [
@@ -150,7 +131,23 @@ const sexOptions = [
   { label: "Prefer not to say", value: "N/A" },
 ];
 
-const { formik } = useFormikForm(props.validationSchema);
+const opts = computed(() => ({
+  validationSchema: props.value === DemoTabValues.CUSTOM ? props.validationSchema : undefined,
+  yupSchema: props.value === DemoTabValues.YUP ? props.validationSchema : undefined,
+  validateOnMount: props.validateOnMount,
+}));
 
-provide("formik", formik);
+const formik = computed(() =>
+  useFormik({
+    initialValues: InitialValues,
+    ...opts.value,
+    onSubmit: (values: any) => {
+      console.log("Submitted:", values);
+    },
+  }),
+);
+
+const fieldArray = computed(() => useFieldArray(formik.value));
+
+provide("formik", formik.value);
 </script>

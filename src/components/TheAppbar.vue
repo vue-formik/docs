@@ -13,6 +13,7 @@ defineProps<{
       <h1><router-link to="/" class="!no-underline">Vue Formik</router-link></h1>
       <div class="grow hidden sm:block" />
       <router-link class="hidden sm:block" to="/about">About</router-link>
+      <router-link class="hidden sm:block" to="/demo">Demo</router-link>
       <a class="hidden sm:block" href="https://github.com/vue-formik/vue-formik" target="_blank">
         ⭐ Star us on GitHub
       </a>

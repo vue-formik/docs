@@ -48,15 +48,17 @@
         </li>
         <li>
           You can create custom validation functions or integrate a library like
-          <a href="https://github.com/jquense/yup" target="_blank" title="Yup">Yup</a> for
-          schema-based validation.
+          <a href="https://github.com/jquense/yup" target="_blank" title="Yup" class="text-primary"
+            >Yup</a
+          >, <a href="https://joi.dev/" target="_blank" title="Joi" class="text-primary">Joi</a>, or
+          <a href="https://zod.dev/" target="_blank" title="Zod" class="text-primary">Zod</a>
+
+          for schema-based validation.
         </li>
 
         <li>
           Future plans include extending support to other popular validation libraries, such as
-          <a href="https://zod.dev/" target="_blank" title="Zod">Zod</a> and
-          <a href="https://joi.dev/" target="_blank" title="Joi">Joi</a>, ensuring maximum
-          flexibility and compatibility. 🌟
+          VeeValidate and Vuelidate, ensuring maximum flexibility and compatibility. 🌟
         </li>
       </ol>
     </blockquote>

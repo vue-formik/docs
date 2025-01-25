@@ -43,6 +43,10 @@ const router = createRouter({
               path: "use-formik",
               component: () => import("@/views/libDocs/composables/useFormik/UseFormikView.vue"),
             },
+            {
+              path: "use-field-array",
+              component: () => import("@/views/libDocs/composables/UseFieldArrayView.vue"),
+            },
           ],
         },
         {

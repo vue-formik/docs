@@ -3,6 +3,22 @@
     <h2 title="parameters">🛠️ Parameters</h2>
     <SimpleTable :columns="UseFormikParameterColumns" :rows="UseFormikParameters" />
 
+    <blockquote>
+      <p class="!text-md"><strong>🔗 Notes:</strong></p>
+
+      <p>
+        The validation schema can be supplied as <code>yupSchema</code>, <code>joiSchema</code>,
+        <code>zodSchema</code> or <code>validationSchema</code> parameters.
+      </p>
+      <p>
+        If any of the schema parameters are not provided, the form will not perform any validation.
+      </p>
+      <p>
+        Please use Object schemas for <code>Yup</code> and <code>Joi</code> and not the
+        <code>string</code> schemas.
+      </p>
+    </blockquote>
+
     <article>
       <h4>Parameters for <code>onSubmit</code> handler</h4>
 
