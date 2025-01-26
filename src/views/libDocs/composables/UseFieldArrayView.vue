@@ -39,16 +39,8 @@ const { push, pop } = useFieldArray(formik);`;
       <blockquote>
         <p class="font-semibold">Note: <code>formik</code> parameter</p>
         <p>
-          The composable reads formik from parameters or using injections. If you are using the
-          composable inside a component that is wrapped with the
-          <code>withFormik</code> HOC, you don't need to pass the formik object as an argument.
-        </p>
-
-        <p>
-          If you are using the composable outside of a component, you need to pass the formik object
-          as an argument to the composable. The composable will automatically detect the formik
-          object if it is available in the component's context. If both the formik object parameter
-          and the argument in injection are provided, the fn parameter will take precedence.
+          The <code>formik</code> parameter is the object returned by the
+          <code>useFormik</code> composable.
         </p>
       </blockquote>
     </section>

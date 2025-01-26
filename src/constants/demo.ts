@@ -40,10 +40,10 @@ export const ValidationSchema = {
 
     const errs = [];
     for (let i = 0; i < value.length; i++) {
-      const err = {
-        code: "",
-        number: "",
-      };
+      const err: {
+        code?: string;
+        number?: string;
+      } = {};
 
       if (!value[i].code) {
         err.code = "Code is required";
@@ -58,7 +58,9 @@ export const ValidationSchema = {
         err.number = "Invalid phone number. Must be 10 digits";
       }
 
-      errs[i] = err;
+      if (err.code || err.number) {
+        errs[i] = err;
+      }
     }
 
     return errs.length ? errs : undefined;
@@ -67,7 +69,6 @@ export const ValidationSchema = {
     if (value.length === 0) {
       return "Address is required";
     }
-    console.log(value);
 
     const errs = [];
     for (let i = 0; i < value.length; i++) {

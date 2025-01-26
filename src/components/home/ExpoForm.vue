@@ -13,7 +13,7 @@
       <div>Contacts</div>
       <ol class="flex flex-col gap-2 list-decimal list-inside">
         <li v-for="(_, index) in formik.values.contacts" :key="index" class="flex gap-4">
-          <span> {{ index + 1 }}. </span>
+          <span> {{ index + 1 }}.</span>
           <FormInput
             :name="`contacts[${index}].code`"
             type="tel"
@@ -88,9 +88,19 @@
 
     <br />
 
-    <button type="submit" class="primary-btn w-fit" :disabled="!formik.isValid.value">
-      Submit
-    </button>
+    <div class="flex items-center gap-2">
+      <button type="submit" class="primary-btn w-fit" :disabled="!formik.isValid.value">
+        Submit
+      </button>
+      <button
+        type="reset"
+        class="secondary-btn ml-4 w-fit"
+        :disabled="!formik.isDirty.value"
+        @click="() => formik.reset({ keepTouched: false })"
+      >
+        Reset
+      </button>
+    </div>
   </FormikForm>
   <div class="overflow-auto border border-gray-500 p-4 rounded-md h-full text-sm">
     <pre><code>{{JSON.stringify({
@@ -130,22 +140,20 @@ const sexOptions = [
 ];
 
 const opts = computed(() => ({
+  initialValues: InitialValues,
   validationSchema: props.value === DemoTabValues.CUSTOM ? props.validationSchema : undefined,
   yupSchema: props.value === DemoTabValues.YUP ? props.validationSchema : undefined,
   validateOnMount: props.validateOnMount,
+  onSubmit: (values: any, helpers: any) => {
+    if (confirm(JSON.stringify(values, null, 2))) {
+      console.log("Submitted", values);
+      helpers.reset();
+    }
+  },
 }));
 
-const formik = computed(() =>
-  useFormik({
-    initialValues: InitialValues,
-    ...opts.value,
-    onSubmit: (values: any) => {
-      console.log("Submitted:", values);
-    },
-  }),
-);
+const formik = useFormik(opts.value);
+const fieldArray = useFieldArray(formik);
 
-const fieldArray = computed(() => useFieldArray(formik.value));
-
-provide("formik", formik.value);
+provide("formik", formik);
 </script>
