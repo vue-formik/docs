@@ -11,17 +11,18 @@
 
     <div class="flex flex-col w-full gap-2">
       <div>Contacts</div>
-      <div class="flex flex-col gap-2">
-        <div v-for="(_, index) in formik.values.contacts" :key="index" class="flex gap-4">
+      <ol class="flex flex-col gap-2 list-decimal list-inside">
+        <li v-for="(_, index) in formik.values.contacts" :key="index" class="flex gap-4">
+          <span> {{ index + 1 }}. </span>
           <FormInput
             :name="`contacts[${index}].code`"
             type="tel"
-            :placeholder="`Enter contact number ${index + 1}`"
+            placeholder="Enter contact code"
           />
           <FormInput
             :name="`contacts[${index}].number`"
             type="tel"
-            :placeholder="`Enter contact number ${index + 1}`"
+            placeholder="Enter contact number"
           />
 
           <button
@@ -33,8 +34,8 @@
           >
             x
           </button>
-        </div>
-      </div>
+        </li>
+      </ol>
       <button
         type="button"
         class="secondary-outlined-btn mt-8 w-fit"
@@ -61,11 +62,8 @@
         :key="index"
         class="flex items-start gap-4"
       >
-        <FormInput
-          :name="`addresses[${index}]`"
-          type="text"
-          :placeholder="`Enter address line ${index + 1}`"
-        />
+        <span> {{ index + 1 }}. </span>
+        <FormInput :name="`addresses[${index}]`" type="text" placeholder="Enter address line" />
 
         <button
           type="button"
