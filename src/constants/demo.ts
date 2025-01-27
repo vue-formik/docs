@@ -1,8 +1,12 @@
 import * as Yup from "yup";
+import Joi from "joi";
+import { z } from "zod";
 
 export const DemoTabValues = {
   CUSTOM: 1,
   YUP: 0,
+  JOI: 2,
+  ZOD: 3,
 };
 
 interface IContact {
@@ -122,7 +126,66 @@ export const ValidationSchemaYup = Yup.object().shape({
     .default([""]), // Ensures addresses array is initialized
 });
 
+export const ValidationSchemaJoi = Joi.object({
+  name: Joi.string().required(),
+  email: Joi.string()
+    .email({
+      tlds: { allow: false },
+    })
+    .required(),
+  contacts: Joi.array()
+    .items(
+      Joi.object({
+        code: Joi.string()
+          .pattern(/^\+\d{2,3}$/)
+          .required(),
+        number: Joi.string()
+          .pattern(/^\d{10}$/)
+          .required(),
+      }),
+    )
+    .min(1)
+    .required(),
+  sex: Joi.string().required(),
+  message: Joi.string().required(),
+  addresses: Joi.array().items(Joi.string().min(3).max(50).required()).min(1).required(),
+});
+
+export const ValidationSchemaZod = z.object({
+  name: z.string().nonempty("Name is required"),
+  email: z.string().email("Invalid email").nonempty("Email is required"),
+  contacts: z
+    .array(
+      z.object({
+        code: z
+          .string()
+          .regex(/^\+\d{2,3}$/, "Invalid code. Must be in format +91")
+          .nonempty("Code is required"),
+        number: z
+          .string()
+          .regex(/^\d{10}$/, "Invalid phone number. Must be 10 digits")
+          .nonempty("Number is required"),
+      }),
+    )
+    .min(1, "At least one contact is required")
+    .nonempty("Contacts are required"),
+  sex: z.string().nonempty("Sex is required"),
+  message: z.string().nonempty("Message is required"),
+  addresses: z
+    .array(
+      z
+        .string()
+        .min(3, "Address must be at least 3 characters")
+        .max(50, "Address must be at most 50 characters")
+        .nonempty("Address is required"),
+    )
+    .min(1, "At least one address is required")
+    .nonempty("Addresses are required"),
+});
+
 export const DemoTabs = [
   { name: "Custom", value: DemoTabValues.CUSTOM, schema: ValidationSchema },
   { name: "Yup", value: DemoTabValues.YUP, schema: ValidationSchemaYup },
+  { name: "Joi", value: DemoTabValues.JOI, schema: ValidationSchemaJoi },
+  { name: "Zod", value: DemoTabValues.ZOD, schema: ValidationSchemaZod },
 ];

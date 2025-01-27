@@ -143,6 +143,8 @@ const opts = computed(() => ({
   initialValues: InitialValues,
   validationSchema: props.value === DemoTabValues.CUSTOM ? props.validationSchema : undefined,
   yupSchema: props.value === DemoTabValues.YUP ? props.validationSchema : undefined,
+  joiSchema: props.value === DemoTabValues.JOI ? props.validationSchema : undefined,
+  zodSchema: props.value === DemoTabValues.ZOD ? props.validationSchema : undefined,
   validateOnMount: props.validateOnMount,
   onSubmit: (values: any, helpers: any) => {
     if (confirm(JSON.stringify(values, null, 2))) {
