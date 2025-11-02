@@ -1,12 +1,14 @@
 import * as Yup from "yup";
-import Joi from "joi";
+import * as Joi from "joi";
 import { z } from "zod";
+import { object, string, array, refine, size } from "superstruct";
 
 export const DemoTabValues = {
   CUSTOM: 1,
   YUP: 0,
   JOI: 2,
   ZOD: 3,
+  SUPERSTRUCT: 4,
 };
 
 interface IContact {
@@ -180,9 +182,62 @@ export const ValidationSchemaZod = z.object({
     .min(1, "At least one address is required"),
 });
 
+const codePattern = refine(string(), "code", (value) => {
+  if (!value || value.length === 0) {
+    return "Code is required";
+  }
+  return /^\+\d{2,3}$/.test(value) ? true : "Invalid code. Must be in format +91";
+});
+
+const numberPattern = refine(string(), "number", (value) => {
+  if (!value || value.length === 0) {
+    return "Number is required";
+  }
+  return /^\d{10}$/.test(value) ? true : "Invalid phone number. Must be 10 digits";
+});
+
+const emailPattern = refine(string(), "email", (value) => {
+  if (!value || value.length === 0) {
+    return "Email is required";
+  }
+  return value.includes("@") ? true : "Invalid email";
+});
+
+const requiredString = refine(string(), "required", (value) => {
+  return value && value.length > 0 ? true : "This field is required";
+});
+
+const addressPattern = refine(string(), "address", (value) => {
+  if (!value || value.length < 3) {
+    return "Address must be at least 3 characters";
+  }
+  if (value.length > 50) {
+    return "Address must be at most 50 characters";
+  }
+  return true;
+});
+
+export const ValidationSchemaSuperstruct = object({
+  name: requiredString,
+  email: emailPattern,
+  contacts: size(
+    array(
+      object({
+        code: codePattern,
+        number: numberPattern,
+      }),
+    ),
+    1,
+  ),
+  sex: requiredString,
+  message: requiredString,
+  addresses: size(array(addressPattern), 1),
+});
+
 export const DemoTabs = [
   { name: "Custom", value: DemoTabValues.CUSTOM, schema: ValidationSchema },
   { name: "Yup", value: DemoTabValues.YUP, schema: ValidationSchemaYup },
   { name: "Joi", value: DemoTabValues.JOI, schema: ValidationSchemaJoi },
   { name: "Zod", value: DemoTabValues.ZOD, schema: ValidationSchemaZod },
+  { name: "Superstruct", value: DemoTabValues.SUPERSTRUCT, schema: ValidationSchemaSuperstruct },
 ];

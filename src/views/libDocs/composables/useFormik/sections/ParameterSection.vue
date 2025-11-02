@@ -51,6 +51,10 @@
           <code>{ replace?: boolean }</code> parameter to fully replace the current values.
         </li>
         <li><code>setSubmitting</code> - Sets the submitting state of the form.</li>
+        <li><code>setTouched</code> - Sets the touched state of the form fields.</li>
+        <li><code>setFieldValue</code> - Sets the value of a specific form field.</li>
+        <li><code>setFieldTouched</code> - Sets the touched state of a specific form field.</li>
+        <li><code>event</code> - The event that triggered the form submission or reset.</li>
       </ol>
     </article>
   </section>

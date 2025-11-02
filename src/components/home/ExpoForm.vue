@@ -89,7 +89,7 @@
     <br />
 
     <div class="flex items-center gap-2">
-      <button type="submit" class="primary-btn w-fit" :disabled="!formik.isValid.value">
+      <button type="submit" class="primary-btn w-fit">
         Submit
       </button>
       <button
@@ -130,6 +130,10 @@ const props = defineProps<{
   validationSchema: any;
   value: number;
   validateOnMount: boolean;
+  validateOnChange: boolean;
+  validateOnBlur: boolean;
+  validationDebounce: number;
+  preventDefault: boolean;
 }>();
 
 const sexOptions = [
@@ -145,7 +149,12 @@ const opts = computed(() => ({
   yupSchema: props.value === DemoTabValues.YUP ? props.validationSchema : undefined,
   joiSchema: props.value === DemoTabValues.JOI ? props.validationSchema : undefined,
   zodSchema: props.value === DemoTabValues.ZOD ? props.validationSchema : undefined,
+  structSchema: props.value === DemoTabValues.SUPERSTRUCT ? props.validationSchema : undefined,
   validateOnMount: props.validateOnMount,
+  validateOnChange: props.validateOnChange,
+  validateOnBlur: props.validateOnBlur,
+  validationDebounce: props.validationDebounce,
+  preventDefault: props.preventDefault,
   onSubmit: (values: any, helpers: any) => {
     if (confirm(JSON.stringify(values, null, 2))) {
       helpers.reset();
