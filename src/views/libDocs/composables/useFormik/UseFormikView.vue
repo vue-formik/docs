@@ -5,6 +5,7 @@
     <PropertiesSection />
     <MethodsSection />
     <CustomValidationSection />
+    <AsyncValidationSection />
     <InfoPageFooter />
   </section>
 </template>
@@ -15,6 +16,7 @@ import ParameterSection from "@/views/libDocs/composables/useFormik/sections/Par
 import PropertiesSection from "@/views/libDocs/composables/useFormik/sections/PropertiesSection.vue";
 import MethodsSection from "@/views/libDocs/composables/useFormik/sections/MethodsSection.vue";
 import CustomValidationSection from "@/views/libDocs/composables/useFormik/sections/CustomValidationSection.vue";
+import AsyncValidationSection from "@/views/libDocs/composables/useFormik/sections/AsyncValidationSection.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 </script>
 

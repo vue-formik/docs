@@ -38,7 +38,6 @@ const formik = useFormik({
     },
   },
   onSubmit(values, helpers) {
-    console.log("Form submitted", values)
     helpers.reset()
   },
 })

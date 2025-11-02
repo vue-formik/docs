@@ -152,35 +152,32 @@ export const ValidationSchemaJoi = Joi.object({
 });
 
 export const ValidationSchemaZod = z.object({
-  name: z.string().nonempty("Name is required"),
-  email: z.string().email("Invalid email").nonempty("Email is required"),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email").min(1, "Email is required"),
   contacts: z
     .array(
       z.object({
         code: z
           .string()
           .regex(/^\+\d{2,3}$/, "Invalid code. Must be in format +91")
-          .nonempty("Code is required"),
+          .min(1, "Code is required"),
         number: z
           .string()
           .regex(/^\d{10}$/, "Invalid phone number. Must be 10 digits")
-          .nonempty("Number is required"),
+          .min(1, "Number is required"),
       }),
     )
-    .min(1, "At least one contact is required")
-    .nonempty("Contacts are required"),
-  sex: z.string().nonempty("Sex is required"),
-  message: z.string().nonempty("Message is required"),
+    .min(1, "At least one contact is required"),
+  sex: z.string().min(1, "Sex is required"),
+  message: z.string().min(1, "Message is required"),
   addresses: z
     .array(
       z
         .string()
         .min(3, "Address must be at least 3 characters")
-        .max(50, "Address must be at most 50 characters")
-        .nonempty("Address is required"),
+        .max(50, "Address must be at most 50 characters"),
     )
-    .min(1, "At least one address is required")
-    .nonempty("Addresses are required"),
+    .min(1, "At least one address is required"),
 });
 
 export const DemoTabs = [

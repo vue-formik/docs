@@ -60,7 +60,6 @@ const code = `const ValidationSchema = {
     if (value.length === 0) {
       return "Address is required";
     }
-    console.log(value);
 
     const errs = [];
     for (let i = 0; i < value.length; i++) {

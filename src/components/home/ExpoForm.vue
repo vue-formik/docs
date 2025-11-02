@@ -148,7 +148,6 @@ const opts = computed(() => ({
   validateOnMount: props.validateOnMount,
   onSubmit: (values: any, helpers: any) => {
     if (confirm(JSON.stringify(values, null, 2))) {
-      console.log("Submitted", values);
       helpers.reset();
     }
   },
