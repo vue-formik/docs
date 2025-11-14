@@ -22,7 +22,10 @@
           Validation functions can return <code>Promise</code> objects (async/await syntax or
           explicit promises)
         </li>
-        <li>The <code>isValidating</code> flag is automatically set to <code>true</code> during validation</li>
+        <li>
+          The <code>isValidating</code> flag is automatically set to <code>true</code> during
+          validation
+        </li>
         <li>All promises are awaited before updating the error state</li>
         <li>Works with all schema types: custom, Yup, Joi, Zod, and Superstruct</li>
       </ul>
@@ -56,8 +59,8 @@
     <CodeBlock :content="CombinedExample" />
 
     <p class="mt-4">
-      This approach is perfect for scenarios like username availability checks, email validation,
-      or any form with search-like fields that trigger API calls.
+      This approach is perfect for scenarios like username availability checks, email validation, or
+      any form with search-like fields that trigger API calls.
     </p>
 
     <article class="!my-8 border-l-4 border-blue-500 bg-blue-50/10 p-4">
@@ -80,4 +83,3 @@ import {
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoIcon from "@/components/svgIcons/InfoIcon.vue";
 </script>
-

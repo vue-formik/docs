@@ -89,9 +89,7 @@
     <br />
 
     <div class="flex items-center gap-2">
-      <button type="submit" class="primary-btn w-fit">
-        Submit
-      </button>
+      <button type="submit" class="primary-btn w-fit">Submit</button>
       <button
         type="reset"
         class="secondary-btn ml-4 w-fit"

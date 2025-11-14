@@ -171,15 +171,14 @@
         </p>
         <CodeBlock :content="ModernAPIExample" />
         <p class="mt-4">
-          The API feels natural to Vue 3 developers and leverages Vue's reactivity system efficiently.
+          The API feels natural to Vue 3 developers and leverages Vue's reactivity system
+          efficiently.
         </p>
       </article>
 
       <article class="!my-6">
         <h3>4. 🔄 Flexible Validation Timing</h3>
-        <p>
-          Control exactly when validation occurs with granular options:
-        </p>
+        <p>Control exactly when validation occurs with granular options:</p>
         <CodeBlock :content="ValidationTimingExample" />
         <p class="mt-4">
           This gives you full control over user experience - validate as they type, on blur, or only
@@ -189,9 +188,7 @@
 
       <article class="!my-6">
         <h3>5. 📦 Component Library Included</h3>
-        <p>
-          Vue Formik comes with pre-built, accessibility-friendly components:
-        </p>
+        <p>Vue Formik comes with pre-built, accessibility-friendly components:</p>
         <CodeBlock :content="ComponentsExample" />
         <p class="mt-4">
           These components automatically integrate with form state, reducing boilerplate and
@@ -205,9 +202,7 @@
 
       <article class="!my-6">
         <h3>Reduced Boilerplate</h3>
-        <p>
-          Vue Formik reduces the amount of code you need to write. Compare this:
-        </p>
+        <p>Vue Formik reduces the amount of code you need to write. Compare this:</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div>
@@ -238,8 +233,8 @@
       <article class="!my-6">
         <h3>Battle-Tested Approach</h3>
         <p>
-          Inspired by React's Formik (16M+ downloads), Vue Formik brings proven patterns to Vue.
-          The Formik approach has been validated in thousands of production applications.
+          Inspired by React's Formik (16M+ downloads), Vue Formik brings proven patterns to Vue. The
+          Formik approach has been validated in thousands of production applications.
         </p>
       </article>
     </section>
@@ -282,4 +277,3 @@ table
   th, td
     font-size: 0.9rem
 </style>
-

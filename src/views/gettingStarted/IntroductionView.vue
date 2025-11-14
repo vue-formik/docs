@@ -51,7 +51,9 @@
           <a :href="Links.Yup" target="_blank" title="Yup" class="text-primary">Yup</a>,
           <a :href="Links.Joi" target="_blank" title="Joi" class="text-primary">Joi</a>,
           <a :href="Links.Zod" target="_blank" title="Zod" class="text-primary">Zod</a>, or
-          <a href="https://docs.superstructjs.org/" target="_blank" class="text-primary">Superstruct</a>
+          <a href="https://docs.superstructjs.org/" target="_blank" class="text-primary"
+            >Superstruct</a
+          >
           for schema-based validation.
         </li>
 

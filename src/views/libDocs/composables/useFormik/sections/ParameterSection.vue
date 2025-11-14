@@ -8,7 +8,8 @@
 
       <p>
         The validation schema can be supplied as <code>yupSchema</code>, <code>joiSchema</code>,
-        <code>zodSchema</code>, <code>structSchema</code>, or <code>validationSchema</code> parameters.
+        <code>zodSchema</code>, <code>structSchema</code>, or
+        <code>validationSchema</code> parameters.
       </p>
       <p>
         If any of the schema parameters are not provided, the form will not perform any validation.

@@ -15,46 +15,25 @@
       >
         {{ tabItem.name }}
       </button>
-
     </div>
     <div class="flex gap-4 items-center flex-wrap mb-4">
       <label for="validateOnMount" class="flex items-center">
-        <input
-          id="validateOnMount"
-          v-model="validateOnMount"
-          type="checkbox"
-          class="mr-2"
-        />
+        <input id="validateOnMount" v-model="validateOnMount" type="checkbox" class="mr-2" />
         <span class="text-sm">Validate on mount</span>
       </label>
 
       <label for="validateOnChange" class="flex items-center">
-        <input
-          id="validateOnChange"
-          v-model="validateOnChange"
-          type="checkbox"
-          class="mr-2"
-        />
+        <input id="validateOnChange" v-model="validateOnChange" type="checkbox" class="mr-2" />
         <span class="text-sm">Validate on change</span>
       </label>
 
       <label for="validateOnBlur" class="flex items-center">
-        <input
-          id="validateOnBlur"
-          v-model="validateOnBlur"
-          type="checkbox"
-          class="mr-2"
-        />
+        <input id="validateOnBlur" v-model="validateOnBlur" type="checkbox" class="mr-2" />
         <span class="text-sm">Validate on blur</span>
       </label>
 
       <label for="preventDefault" class="flex items-center">
-        <input
-          id="preventDefault"
-          v-model="preventDefault"
-          type="checkbox"
-          class="mr-2"
-        />
+        <input id="preventDefault" v-model="preventDefault" type="checkbox" class="mr-2" />
         <span class="text-sm">Prevent default</span>
       </label>
 
