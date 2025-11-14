@@ -16,13 +16,14 @@
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
-    "joi": "^17.13.3",
-    "pinia": "^2.3.0",
-    "vue": "^3.5.13",
-    "vue-formik": "^0.1.42",
-    "vue-router": "^4.5.0",
-    "yup": "^1.6.1",
-    "zod": "^3.24.1"
+    "joi": "^18.0.1",
+    "pinia": "^3.0.4",
+    "superstruct": "^2.0.2",
+    "vue": "^3.5.24",
+    "vue-formik": "^0.2.3",
+    "vue-router": "^4.6.3",
+    "yup": "^1.7.1",
+    "zod": "^4.1.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
@@ -47,10 +48,10 @@
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
     "tailwindcss": "^3.4.17",
-    "typescript": "~5.6.3",
+    "typescript": "^5.9.3",
     "vite": "^6.0.5",
     "vite-plugin-vue-devtools": "^7.6.8",
     "vitest": "^2.1.8",
-    "vue-tsc": "^2.1.10"
+    "vue-tsc": "^3.1.2"
   }
 }

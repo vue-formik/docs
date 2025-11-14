@@ -10,10 +10,53 @@ export const UseFormikParameterColumns = [
 export const UseFormikParameters = [
   {
     name: "initialValues",
-    type: "object: <T>",
+    type: "T",
     required: true,
     default: "-",
     description: "An object containing the initial values for the form fields.",
+  },
+  {
+    name: "validateOnMount",
+    type: "boolean",
+    required: false,
+    default: "true",
+    description: "If true, performs validation when the form is initialized.",
+  },
+  {
+    name: "validateOnChange",
+    type: "boolean",
+    required: false,
+    default: "true",
+    description: "If true, performs validation when form fields change.",
+  },
+  {
+    name: "validateOnBlur",
+    type: "boolean",
+    required: false,
+    default: "true",
+    description: "If true, performs validation when form fields lose focus.",
+  },
+  {
+    name: "validationDebounce",
+    type: "number",
+    required: false,
+    default: "0",
+    description: "Debounce time in milliseconds for validation when validateOnChange is true.",
+  },
+  {
+    name: "preventDefault",
+    type: "boolean",
+    required: false,
+    default: "true",
+    description: "If true, prevents the default form submission behavior.",
+  },
+  {
+    name: "onSubmit",
+    type: "FormikOnSubmit<T>",
+    required: false,
+    default: "-",
+    description:
+      "A function to handle form submission. It receives the current form values and helpers and may return a Promise for async workflows.",
   },
   {
     name: "yupSchema",
@@ -37,33 +80,33 @@ export const UseFormikParameters = [
     description: "A zod schema for validating the form fields.",
   },
   {
+    name: "structSchema",
+    type: "Struct<T>",
+    required: false,
+    default: "-",
+    description: "A superstruct schema for validating the form fields.",
+  },
+  {
     name: "validationSchema",
     type: "FormikValidationSchema<T>",
     required: false,
     default: "-",
-    description: "A custom validation rules object for validating the form fields.",
+    description:
+      "A custom validation rules object or function for validating the form fields. Supports synchronous or asynchronous rules.",
   },
   {
-    name: "onSubmit",
-    type: "FormikOnSubmit<T>",
+    name: "initialErrors",
+    type: "Partial<Record<keyof T, unknown>>",
     required: false,
     default: "-",
-    description:
-      "A function to handle form submission. It receives the current form values and helpers.",
+    description: "Initial error values for form fields.",
   },
   {
-    name: "validateOnMount",
-    type: "boolean",
+    name: "initialTouched",
+    type: "Partial<Record<keyof T, unknown>>",
     required: false,
-    default: "true",
-    description: "If true, performs validation when the form is initialized.",
-  },
-  {
-    name: "preventDefault",
-    type: "boolean",
-    required: false,
-    default: "true",
-    description: "If true, prevents the default form submission behavior.",
+    default: "-",
+    description: "Initial touched state values for form fields.",
   },
 ] as IRow[];
 
@@ -103,7 +146,8 @@ export const UseFormikReturnedProperties = [
   {
     name: "isSubmitting",
     type: "ref<boolean>",
-    description: "Ref indicating if the form is in the submitting state.",
+    description:
+      "Ref indicating if the form is in the submitting state. Automatically resets after validation failures or when async submits resolve.",
   },
   {
     name: "isValidating",
@@ -131,8 +175,9 @@ export const UseFormikReturnedMethodsColumns = [
 export const UseFormikReturnedMethods = [
   {
     name: "setValues",
-    parameters: "(newValues: Partial<T>)",
-    description: "Updates the form values.",
+    parameters: "(newValues: Partial<T>, options?: { replace?: boolean })",
+    description:
+      "Updates the form values. Use `replace: true` to fully replace the current values and drop keys that are not present in the new payload.",
   },
   {
     name: "setErrors",
@@ -146,8 +191,9 @@ export const UseFormikReturnedMethods = [
   },
   {
     name: "reset",
-    parameters: "({ values }: { values?: Partial<T> })",
-    description: "Resets the form to the initial state or provided values.",
+    parameters: "({ values, keepTouched }: IResetOptions<T>)",
+    description:
+      "Resets the form to the initial state or provided values. When new values are provided they become the new initial state and replace missing keys.",
   },
   {
     name: "setFieldValue",
@@ -167,7 +213,8 @@ export const UseFormikReturnedMethods = [
   {
     name: "handleSubmit",
     parameters: "(e: Event)",
-    description: "Handles form submission, triggers validation, and executes onSubmit.",
+    description:
+      "Handles form submission, triggers validation, and executes onSubmit. Returns a Promise that resolves after async validation and submission complete.",
   },
   {
     name: "handleFieldBlur",

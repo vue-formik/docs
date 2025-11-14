@@ -43,21 +43,23 @@
 
       <ol class="list-decimal !ml-6">
         <li>
-          Vue Formik currently supports only synchronous validation. However, support for
-          asynchronous validation is on our roadmap. 🛠️
+          Vue Formik supports both synchronous and asynchronous validation, allowing you to handle
+          complex validation scenarios with ease. 🔄
         </li>
         <li>
           You can create custom validation functions or integrate a library like
           <a :href="Links.Yup" target="_blank" title="Yup" class="text-primary">Yup</a>,
-          <a :href="Links.Joi" target="_blank" title="Joi" class="text-primary">Joi</a>, or
-          <a :href="Links.Zod" target="_blank" title="Zod" class="text-primary">Zod</a>
-
+          <a :href="Links.Joi" target="_blank" title="Joi" class="text-primary">Joi</a>,
+          <a :href="Links.Zod" target="_blank" title="Zod" class="text-primary">Zod</a>, or
+          <a href="https://docs.superstructjs.org/" target="_blank" class="text-primary"
+            >Superstruct</a
+          >
           for schema-based validation.
         </li>
 
         <li>
-          Future plans include extending support to other popular validation libraries, such as
-          VeeValidate and Vuelidate, ensuring maximum flexibility and compatibility. 🌟
+          The library provides an <code>isValidating</code> flag to track validation state, ensuring
+          smooth user experience during async validation. ⚡
         </li>
       </ol>
     </blockquote>

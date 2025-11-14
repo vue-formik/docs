@@ -69,7 +69,7 @@
           type="button"
           class="secondary-outlined-btn size-11"
           title="Remove address"
-          :disabled="formik.values.addresses.length <= 1"
+          :disabled="formik.values.addresses?.length <= 1"
           @click="() => fieldArray.pop('addresses', index)"
         >
           x
@@ -89,9 +89,7 @@
     <br />
 
     <div class="flex items-center gap-2">
-      <button type="submit" class="primary-btn w-fit" :disabled="!formik.isValid.value">
-        Submit
-      </button>
+      <button type="submit" class="primary-btn w-fit">Submit</button>
       <button
         type="reset"
         class="secondary-btn ml-4 w-fit"
@@ -130,6 +128,10 @@ const props = defineProps<{
   validationSchema: any;
   value: number;
   validateOnMount: boolean;
+  validateOnChange: boolean;
+  validateOnBlur: boolean;
+  validationDebounce: number;
+  preventDefault: boolean;
 }>();
 
 const sexOptions = [
@@ -145,16 +147,20 @@ const opts = computed(() => ({
   yupSchema: props.value === DemoTabValues.YUP ? props.validationSchema : undefined,
   joiSchema: props.value === DemoTabValues.JOI ? props.validationSchema : undefined,
   zodSchema: props.value === DemoTabValues.ZOD ? props.validationSchema : undefined,
+  structSchema: props.value === DemoTabValues.SUPERSTRUCT ? props.validationSchema : undefined,
   validateOnMount: props.validateOnMount,
+  validateOnChange: props.validateOnChange,
+  validateOnBlur: props.validateOnBlur,
+  validationDebounce: props.validationDebounce,
+  preventDefault: props.preventDefault,
   onSubmit: (values: any, helpers: any) => {
     if (confirm(JSON.stringify(values, null, 2))) {
-      console.log("Submitted", values);
       helpers.reset();
     }
   },
 }));
 
-const formik = useFormik(opts.value);
+const formik = useFormik<typeof InitialValues>(opts.value);
 const fieldArray = useFieldArray(formik);
 
 provide("formik", formik);

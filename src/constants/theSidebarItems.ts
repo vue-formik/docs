@@ -6,6 +6,7 @@ export default [
     children: [
       { name: "Introduction", path: "/getting-started/introduction" },
       { name: "Quick Start", path: "/getting-started/quick-start" },
+      { name: "Why Vue Formik?", path: "/getting-started/why-vue-formik" },
     ],
   },
   {

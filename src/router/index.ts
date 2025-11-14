@@ -31,6 +31,10 @@ const router = createRouter({
           path: "quick-start",
           component: () => import("@/views/gettingStarted/QuickStartView.vue"),
         },
+        {
+          path: "why-vue-formik",
+          component: () => import("@/views/gettingStarted/WhyVueFormikView.vue"),
+        },
       ],
     },
     {
