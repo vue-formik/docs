@@ -46,21 +46,24 @@ export const ValidationSchema = {
 
     const errs = [];
     for (let i = 0; i < value.length; i++) {
+      const contact = value[i];
+      if (!contact) continue;
+
       const err: {
         code?: string;
         number?: string;
       } = {};
 
-      if (!value[i].code) {
+      if (!contact.code) {
         err.code = "Code is required";
       }
-      if (!/^\+\d{2,3}$/.test(value[i].code)) {
+      if (!/^\+\d{2,3}$/.test(contact.code)) {
         err.code = "Invalid code. Must be in format +91";
       }
-      if (!value[i].number) {
+      if (!contact.number) {
         err.number = "Number is required";
       }
-      if (!/^\d{10}$/.test(value[i].number)) {
+      if (!/^\d{10}$/.test(contact.number)) {
         err.number = "Invalid phone number. Must be 10 digits";
       }
 
@@ -78,17 +81,18 @@ export const ValidationSchema = {
 
     const errs = [];
     for (let i = 0; i < value.length; i++) {
-      if (!value[i]) {
+      const address = value[i];
+      if (!address) {
         errs[i] = "Address is required";
         continue;
       }
 
-      if (value[i].length < 3) {
+      if (address.length < 3) {
         errs[i] = "Address must be at least 3 characters";
         continue;
       }
 
-      if (value[i].length > 50) {
+      if (address.length > 50) {
         errs[i] = "Address must be at most 50 characters";
       }
     }

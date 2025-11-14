@@ -13,16 +13,30 @@ const previousRoute = ref<{ name: string; path: string } | null>(null);
 theSidebarItems.forEach((item, blockIndex) => {
   item.children.forEach((child, childIndex) => {
     if (child.path === currentUrl) {
-      if (item.children[childIndex - 1]) {
-        previousRoute.value = item.children[childIndex - 1];
-      } else if (theSidebarItems[blockIndex - 1]) {
-        previousRoute.value = theSidebarItems[blockIndex - 1].children.slice(-1)[0];
+      const prevChild = item.children[childIndex - 1];
+      if (prevChild) {
+        previousRoute.value = prevChild;
+      } else {
+        const prevBlock = theSidebarItems[blockIndex - 1];
+        if (prevBlock) {
+          const lastChild = prevBlock.children.slice(-1)[0];
+          if (lastChild) {
+            previousRoute.value = lastChild;
+          }
+        }
       }
 
-      if (item.children[childIndex + 1]) {
-        nextRoute.value = item.children[childIndex + 1];
-      } else if (theSidebarItems[blockIndex + 1]) {
-        nextRoute.value = theSidebarItems[blockIndex + 1].children[0];
+      const nextChild = item.children[childIndex + 1];
+      if (nextChild) {
+        nextRoute.value = nextChild;
+      } else {
+        const nextBlock = theSidebarItems[blockIndex + 1];
+        if (nextBlock) {
+          const firstChild = nextBlock.children[0];
+          if (firstChild) {
+            nextRoute.value = firstChild;
+          }
+        }
       }
     }
   });
