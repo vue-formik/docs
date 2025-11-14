@@ -69,7 +69,7 @@
           type="button"
           class="secondary-outlined-btn size-11"
           title="Remove address"
-          :disabled="formik.values.addresses.length <= 1"
+          :disabled="formik.values.addresses?.length <= 1"
           @click="() => fieldArray.pop('addresses', index)"
         >
           x
@@ -162,7 +162,7 @@ const opts = computed(() => ({
   },
 }));
 
-const formik = useFormik(opts.value);
+const formik = useFormik<typeof InitialValues>(opts.value);
 const fieldArray = useFieldArray(formik);
 
 provide("formik", formik);
