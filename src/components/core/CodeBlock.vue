@@ -46,7 +46,6 @@ onMounted(() => {
 <style lang="sass" scoped>
 .copy-btn
   @apply absolute top-4 right-4 text-xs p-0 h-fit w-fit block text-center
-
 pre
   @apply bg-black text-sm text-gray-500 rounded-lg overflow-auto
   @apply p-0
