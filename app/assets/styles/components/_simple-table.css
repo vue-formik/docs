@@ -1,0 +1,29 @@
+table.vf-table {
+  @apply w-full border-collapse;
+
+  thead th {
+    @apply p-2 text-left border-b;
+    border-color: #5b5b5b;
+  }
+
+  tbody tr {
+    @apply border-b;
+    border-color: #353535;
+  }
+
+  tbody tr:nth-child(odd) {
+    @apply bg-[#202020];
+  }
+
+  tbody td {
+    @apply p-2 border-b;
+    border-color: #444444;
+
+    code {
+      @apply bg-[#191919] text-[#969696] px-[0.3rem] py-[0.2rem] rounded border font-mono break-all text-[0.9rem];
+      border-color: #444444;
+      letter-spacing: 0.1px;
+    }
+  }
+}
+

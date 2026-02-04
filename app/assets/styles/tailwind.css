@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "./pages/_info-page";
+@import "./pages/_playground";
+@import "./components/_simple-table";
+
+@theme {
+  /* Custom colors - these will generate bg-*, text-*, border-* utilities */
+  --color-primary: #42b883;
+  --color-on-primary: #213547;
+  --color-secondary: #242424;
+  --color-on-secondary: #aac8e4;
+  --color-surface: #1a1a1a;
+  --color-on-surface: #f1f1f1;
+  --color-surface-b: rgba(84, 84, 84, 0.48);
+
+  --font-size-2xs: 0.625rem;
+  --font-size-base: 1rem;
+
+  /* shadcn colors - using HSL format for proper color utilities (dark mode) */
+  /* These values are used by tailwind.config.js with hsl(var(--variable)) */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    font-family: Merriweather, serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #dadada;
+    letter-spacing: 0.04rem;
+    background-color: var(--color-surface);
+    scrollbar-width: thin;
+    scrollbar-color: hsla(0, 0%, 100%, 0.3) hsla(0, 0%, 100%, 0.1);
+  }
+
+  hr {
+    @apply border-0 border-t border-solid;
+    border-color: var(--color-surface-b);
+  }
+}

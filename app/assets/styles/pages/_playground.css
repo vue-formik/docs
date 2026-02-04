@@ -1,0 +1,85 @@
+@reference "tailwindcss";
+
+.pg-view {
+  @apply p-4 max-w-[1400px] mx-auto;
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+
+  form {
+    @apply col-span-1 lg:col-span-2;
+    @apply flex flex-col gap-4;
+
+    select {
+      @apply p-2 mb-2 border border-gray-400 rounded;
+    }
+
+    textarea {
+      @apply p-2 mb-2 border border-gray-400 rounded;
+    }
+
+    .vf-field {
+      label {
+        @apply text-base;
+      }
+
+      .vf-input {
+        input {
+          @apply w-full;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+          @apply p-2 border border-gray-400 rounded;
+          @apply text-base w-full bg-[#252525];
+
+          &:focus,
+          &:focus-visible,
+          &:focus-within {
+            @apply outline outline-1 outline-white;
+          }
+        }
+      }
+
+      .vf-input--error {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+          @apply border border-red-500!;
+
+          &:focus,
+          &:focus-visible,
+          &:focus-within {
+            @apply outline outline-1 outline-red-500!;
+          }
+        }
+      }
+
+      .vf-error {
+        @apply text-red-500 text-sm;
+      }
+    }
+
+    .addresses {
+      .vf-field {
+        @apply grow;
+      }
+
+      button {
+        @apply w-fit! no-underline;
+      }
+    }
+  }
+}
+
+.pg-view__content {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
