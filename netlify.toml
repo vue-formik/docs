@@ -1,9 +1,2 @@
 [build]
-  # Use npm on Netlify (.netlifyignore excludes pnpm-lock.yaml so Netlify picks npm).
-  install = "npm ci"
-  command = "npm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  command = "pnpm run build"
