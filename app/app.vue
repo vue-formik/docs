@@ -33,6 +33,12 @@ import TheAppbar from "@/components/TheAppbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheSidebar from "@/components/TheSidebar.vue";
 
+// Google Tag Manager (Nuxt Scripts) - loads in production; noop in dev/SSR
+const { proxy } = useScriptGoogleTagManager();
+useScriptEventPage(({ title, path }) => {
+  proxy.dataLayer.push({ event: "pageview", title, path });
+});
+
 const route = useRoute();
 
 const sidebarState = ref(false);

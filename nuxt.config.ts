@@ -49,7 +49,16 @@ export default defineNuxtConfig({
   css: ["@/assets/styles/tailwind.css"],
 
   // Modules
-  modules: ["@nuxt/fonts", "shadcn-nuxt"],
+  modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/scripts"],
+
+  // Nuxt Scripts - Google Tag Manager
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: "GTM-PPQ53DQD",
+      },
+    },
+  },
 
   // Nuxt Fonts configuration
   fonts: {

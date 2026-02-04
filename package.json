@@ -19,6 +19,7 @@
     "node": ">=22.13.0"
   },
   "dependencies": {
+    "@nuxt/scripts": "latest",
     "@iconify/vue": "^5.0.0",
     "@nuxt/fonts": "^0.12.1",
     "@vueuse/core": "^14.1.0",
