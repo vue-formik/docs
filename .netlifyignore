@@ -1,0 +1,2 @@
+# Exclude pnpm lockfile so Netlify uses npm (avoids Corepack signature failure on Node 22).
+pnpm-lock.yaml
