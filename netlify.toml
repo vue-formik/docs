@@ -1,8 +1,9 @@
 [build]
-  # Bypass Corepack (signature verification fails on Netlify's Node 22) by
-  # installing pnpm via npm, then running pnpm install.
-  install = "corepack disable && npm install -g pnpm@10.12.0 && pnpm install"
-  command = "pnpm run build"
+  # No-op install so Netlify doesn't run default "pnpm install" (which uses
+  # Corepack and fails signature verification). Install + build happen in command.
+  install = ":"
+  # Bypass Corepack by installing pnpm via npm, then install deps and build.
+  command = "corepack disable && npm install -g pnpm@10.12.0 && pnpm install && pnpm run build"
 
 [[redirects]]
   from = "/*"
