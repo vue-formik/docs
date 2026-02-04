@@ -5,7 +5,7 @@ import {
   ExampleWithComponents,
   ExampleWithoutComponents,
   ExampleWithProvideInject,
-} from "@/constants/examples/whyComponents.ts";
+} from "@/constants/examples/whyComponents";
 
 definePageMeta({
   sidebar: true,

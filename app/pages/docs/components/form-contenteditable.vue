@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
-import { FormInputSlotCols, FormInputSlots } from "@/constants/propsVFormik/formInput.ts";
+import { FormInputSlotCols, FormInputSlots } from "@/constants/propsVFormik/formInput";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import {
   FormContentEditableProps,
   FormContentEditablePropsCols,
-} from "@/constants/propsVFormik/formContentEditable.ts";
+} from "@/constants/propsVFormik/formContentEditable";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 
 const usage1 = `

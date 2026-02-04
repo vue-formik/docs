@@ -68,10 +68,10 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import CodeBlock from "@/components/core/CodeBlock.vue";
-import minimalExample from "@/constants/examples/minimalExample.ts";
+import minimalExample from "@/constants/examples/minimalExample";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import { ref } from "vue";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 
 definePageMeta({
   sidebar: true,

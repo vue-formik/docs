@@ -270,7 +270,7 @@ import {
   ComponentsExample,
   WithoutFormikExample,
   WithFormikExample,
-} from "@/constants/examples/whyVueFormik.ts";
+} from "@/constants/examples/whyVueFormik";
 </script>
 
 <style scoped lang="sass">

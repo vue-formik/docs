@@ -114,7 +114,7 @@ export const useSEO = (config: SEOConfig) => {
     script: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           "@context": "https://schema.org",
           "@type": config.type === "article" ? "Article" : "WebSite",
           name: title,

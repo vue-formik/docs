@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
-import { FormSelectProps, FormSelectPropsCols } from "@/constants/propsVFormik/formSelect.ts";
-import { FormInputSlotCols, FormInputSlots } from "@/constants/propsVFormik/formInput.ts";
+import { FormSelectProps, FormSelectPropsCols } from "@/constants/propsVFormik/formSelect";
+import { FormInputSlotCols, FormInputSlots } from "@/constants/propsVFormik/formInput";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 

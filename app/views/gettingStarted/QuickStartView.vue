@@ -69,10 +69,10 @@
 
 <script setup lang="ts">
 import CodeBlock from "@/components/core/CodeBlock.vue";
-import minimalExample from "@/constants/examples/minimalExample.ts";
+import minimalExample from "@/constants/examples/minimalExample";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import { ref } from "vue";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 
 const installCommands = {
   npm: `npm i vue-formik`,

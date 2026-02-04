@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
-import { FormTextareaPropsCols } from "@/constants/propsVFormik/formTextarea.ts";
+import { FormTextareaPropsCols } from "@/constants/propsVFormik/formTextarea";
 </script>
 
 <template>

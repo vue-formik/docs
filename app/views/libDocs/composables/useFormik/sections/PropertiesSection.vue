@@ -27,6 +27,6 @@
 import {
   UseFormikReturnedProperties,
   UseFormikReturnedPropertiesColumns,
-} from "@/views/libDocs/composables/useFormik/constants.ts";
+} from "@/views/libDocs/composables/useFormik/constants";
 import SimpleTable from "@/components/core/simpleTable/SimpleTable.vue";
 </script>

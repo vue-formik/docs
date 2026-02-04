@@ -45,7 +45,7 @@
 import {
   CustomValidationObjectExample,
   CustomValidationWithEmailArrayExample,
-} from "@/constants/examples/validationExamples.ts";
+} from "@/constants/examples/validationExamples";
 import CodeBlock from "@/components/core/CodeBlock.vue";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 </script>

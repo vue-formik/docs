@@ -5,7 +5,7 @@ import {
   FormInputPropsCols,
   FormInputSlotCols,
   FormInputSlots,
-} from "@/constants/propsVFormik/formInput.ts";
+} from "@/constants/propsVFormik/formInput";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
 

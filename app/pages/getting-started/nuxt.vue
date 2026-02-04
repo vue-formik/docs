@@ -109,7 +109,7 @@
 import { Button } from "@/components/ui/button";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 import { ref } from "vue";
 
 definePageMeta({

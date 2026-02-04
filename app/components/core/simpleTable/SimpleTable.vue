@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import type { Props, IClasses } from "./types.ts";
+import type { Props, IClasses } from "./types";
 import FieldPreview from "@/views/libDocs/composables/useFormik/FieldPreview.vue";
 
 const defaultClasses = {

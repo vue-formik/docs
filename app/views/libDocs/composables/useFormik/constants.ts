@@ -1,4 +1,4 @@
-import type { IColumn, IRow } from "@/components/core/simpleTable/types.ts";
+import type { IColumn, IRow } from "@/components/core/simpleTable/types";
 
 export const UseFormikParameterColumns = [
   { header: "Parameter", field: "name" },

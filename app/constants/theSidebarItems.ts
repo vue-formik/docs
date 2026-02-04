@@ -1,4 +1,4 @@
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 
 export default [
   {

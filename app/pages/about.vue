@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import pkgJson from "../../package.json";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 
 const { dependencies } = pkgJson;
 const version = dependencies["vue-formik"]?.replace(/^\^/, "");

@@ -83,7 +83,7 @@
 import minimalExample from "@/constants/examples/minimalExample";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 import InfoPageFooter from "@/components/core/InfoPageFooter.vue";
-import Links from "@/constants/Links.ts";
+import Links from "@/constants/Links";
 
 definePageMeta({
   sidebar: true,

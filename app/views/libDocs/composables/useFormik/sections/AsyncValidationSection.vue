@@ -85,6 +85,6 @@ import {
   AsyncValidationExample,
   DebounceValidationExample,
   CombinedExample,
-} from "@/constants/examples/validationExamples.ts";
+} from "@/constants/examples/validationExamples";
 import CodeBlock from "@/components/core/CodeBlock.vue";
 </script>

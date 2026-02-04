@@ -86,8 +86,8 @@
 import { computed, onBeforeMount, ref } from "vue";
 import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";
 import ExpoForm from "@/components/home/ExpoForm.vue";
-import { DemoTabs } from "@/constants/demo.ts";
-import Links from "@/constants/Links.ts";
+import { DemoTabs } from "@/constants/demo";
+import Links from "@/constants/Links";
 
 onBeforeMount(() => {
   document.title = "Home | Vue Formik";
