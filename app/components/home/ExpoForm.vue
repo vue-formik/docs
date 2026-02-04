@@ -81,11 +81,7 @@
       </div>
       <br />
 
-      <Button
-        type="button"
-        variant="secondary"
-        @click="() => fieldArray.push('addresses', '')"
-      >
+      <Button type="button" variant="secondary" @click="() => fieldArray.push('addresses', '')">
         Add address
       </Button>
     </fieldset>

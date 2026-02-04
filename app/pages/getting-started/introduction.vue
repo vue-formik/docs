@@ -3,7 +3,9 @@
     <section>
       <h1 class="">Introduction</h1>
       <article class="mb-10 mt-8">
-        <h4 class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> Did you know?</h4>
+        <h4 class="flex items-center gap-2">
+          <Icon icon="lucide:info" class="h-5 w-5" /> Did you know?
+        </h4>
         <p>
           Vue Formik is built with <strong>TypeScript</strong>, offering extensive type definitions
           to help you write type-safe code. Additionally, it provides numerous utility functions to
@@ -48,12 +50,19 @@
         </li>
         <li>
           You can create custom validation functions or integrate a library like
-          <a :href="Links.Yup" target="_blank" title="Yup" class="text-[var(--color-primary)]">Yup</a>,
-          <a :href="Links.Joi" target="_blank" title="Joi" class="text-[var(--color-primary)]">Joi</a>,
-          <a :href="Links.Zod" target="_blank" title="Zod" class="text-[var(--color-primary)]">Zod</a>, or
+          <a :href="Links.Yup" target="_blank" title="Yup" class="text-[var(--color-primary)]"
+            >Yup</a
+          >,
+          <a :href="Links.Joi" target="_blank" title="Joi" class="text-[var(--color-primary)]"
+            >Joi</a
+          >,
+          <a :href="Links.Zod" target="_blank" title="Zod" class="text-[var(--color-primary)]"
+            >Zod</a
+          >, or
           <a
-href="https://docs.superstructjs.org/" target="_blank"
-class="text-[var(--color-primary)]"
+            href="https://docs.superstructjs.org/"
+            target="_blank"
+            class="text-[var(--color-primary)]"
             >Superstruct</a
           >
           for schema-based validation.
@@ -82,8 +91,8 @@ definePageMeta({
 
 useSEO({
   title: "Introduction - Vue Formik",
-  description: "Learn about Vue Formik, a powerful form library for Vue.js that simplifies form handling with TypeScript support and flexible validation.",
+  description:
+    "Learn about Vue Formik, a powerful form library for Vue.js that simplifies form handling with TypeScript support and flexible validation.",
   keywords: ["vue-formik", "introduction", "vue", "forms", "validation"],
 });
 </script>
-

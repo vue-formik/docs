@@ -38,7 +38,8 @@ definePageMeta({
 
 useSEO({
   title: "FormSelect - Vue Formik",
-  description: "Learn how to use the FormSelectField component in Vue Formik to create reusable select dropdowns with automatic validation.",
+  description:
+    "Learn how to use the FormSelectField component in Vue Formik to create reusable select dropdowns with automatic validation.",
   keywords: ["vue-formik", "FormSelect", "select component", "dropdown", "forms"],
 });
 </script>
@@ -132,4 +133,3 @@ useSEO({
 </template>
 
 <style scoped lang="sass"></style>
-

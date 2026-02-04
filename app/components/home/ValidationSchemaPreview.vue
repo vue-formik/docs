@@ -139,14 +139,14 @@ const yupCode = `const ValidationSchemaYup = Yup.object().shape({
 .container pre {
   max-height: 500px;
   overflow-y: auto;
-  padding: .8rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 5px;
   overflow-x: auto;
   font-size: 0.9rem;
   line-height: 1;
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: 'Arial', Courier, monospace;
+  font-family: "Arial", Courier, monospace;
 }
 
 .container pre code {

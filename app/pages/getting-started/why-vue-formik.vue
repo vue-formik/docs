@@ -17,7 +17,9 @@
           <thead>
             <tr class="bg-gray-800">
               <th class="border border-gray-600 px-4 py-3 text-left">Feature</th>
-              <th class="border border-gray-600 px-4 py-3 text-left text-[var(--color-primary)]">Vue Formik</th>
+              <th class="border border-gray-600 px-4 py-3 text-left text-[var(--color-primary)]">
+                Vue Formik
+              </th>
               <th class="border border-gray-600 px-4 py-3 text-left">VeeValidate</th>
               <th class="border border-gray-600 px-4 py-3 text-left">Vuelidate</th>
             </tr>
@@ -240,7 +242,9 @@
     </section>
 
     <article class="my-10! border-l-4 border-blue-500 bg-blue-50/10 p-6">
-      <h3 class="flex items-center gap-2 mb-3"><Icon icon="lucide:info" class="h-5 w-5" /> When to Use Vue Formik</h3>
+      <h3 class="flex items-center gap-2 mb-3">
+        <Icon icon="lucide:info" class="h-5 w-5" /> When to Use Vue Formik
+      </h3>
       <p class="mb-3">Vue Formik is perfect when you need:</p>
       <ul class="list-disc ml-6 space-y-2">
         <li>Modern Vue 3 + Composition API applications</li>
@@ -276,7 +280,8 @@ definePageMeta({
 
 useSEO({
   title: "Why Vue Formik? - Vue Formik",
-  description: "Discover why Vue Formik is the best choice for form handling in Vue.js. Compare features, performance, and developer experience.",
+  description:
+    "Discover why Vue Formik is the best choice for form handling in Vue.js. Compare features, performance, and developer experience.",
   keywords: ["vue-formik", "comparison", "veevalidate", "vuelidate", "vue", "forms"],
 });
 </script>
@@ -286,4 +291,3 @@ table
   th, td
     font-size: 0.9rem
 </style>
-

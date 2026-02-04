@@ -9,7 +9,8 @@ definePageMeta({
 
 useSEO({
   title: "FormikForm - Vue Formik",
-  description: "Learn how to use the FormikForm component in Vue Formik to wrap your form fields and handle form submission.",
+  description:
+    "Learn how to use the FormikForm component in Vue Formik to wrap your form fields and handle form submission.",
   keywords: ["vue-formik", "FormikForm", "form wrapper", "forms", "submission"],
 });
 </script>
@@ -48,4 +49,3 @@ useSEO({
     <InfoPageFooter />
   </div>
 </template>
-

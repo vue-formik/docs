@@ -3,7 +3,9 @@
     <section>
       <h1 class="">Introduction</h1>
       <article class="mb-10 mt-8">
-        <h4 class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> Did you know?</h4>
+        <h4 class="flex items-center gap-2">
+          <Icon icon="lucide:info" class="h-5 w-5" /> Did you know?
+        </h4>
         <p>
           Vue Formik is built with <strong>TypeScript</strong>, offering extensive type definitions
           to help you write type-safe code. Additionally, it provides numerous utility functions to
@@ -51,9 +53,7 @@
           <a :href="Links.Yup" target="_blank" title="Yup" class="text-primary">Yup</a>,
           <a :href="Links.Joi" target="_blank" title="Joi" class="text-primary">Joi</a>,
           <a :href="Links.Zod" target="_blank" title="Zod" class="text-primary">Zod</a>, or
-          <a
-href="https://docs.superstructjs.org/" target="_blank"
-class="text-primary"
+          <a href="https://docs.superstructjs.org/" target="_blank" class="text-primary"
             >Superstruct</a
           >
           for schema-based validation.

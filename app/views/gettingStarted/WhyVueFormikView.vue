@@ -240,7 +240,9 @@
     </section>
 
     <article class="my-10! border-l-4 border-blue-500 bg-blue-50/10 p-6">
-      <h3 class="flex items-center gap-2 mb-3"><Icon icon="lucide:info" class="h-5 w-5" /> When to Use Vue Formik</h3>
+      <h3 class="flex items-center gap-2 mb-3">
+        <Icon icon="lucide:info" class="h-5 w-5" /> When to Use Vue Formik
+      </h3>
       <p class="mb-3">Vue Formik is perfect when you need:</p>
       <ul class="list-disc ml-6 space-y-2">
         <li>Modern Vue 3 + Composition API applications</li>

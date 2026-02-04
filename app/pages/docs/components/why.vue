@@ -13,7 +13,8 @@ definePageMeta({
 
 useSEO({
   title: "Why Components? - Vue Formik",
-  description: "Learn why Vue Formik components simplify form development and reduce boilerplate code in Vue.js applications.",
+  description:
+    "Learn why Vue Formik components simplify form development and reduce boilerplate code in Vue.js applications.",
   keywords: ["vue-formik", "components", "form components", "vue", "forms"],
 });
 </script>
@@ -90,4 +91,3 @@ useSEO({
     <InfoPageFooter />
   </section>
 </template>
-

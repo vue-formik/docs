@@ -46,7 +46,8 @@ const fromNow = new Date(birth).toLocaleString();
 
 useSEO({
   title: "About - Vue Formik",
-  description: "Learn more about Vue Formik, its author, version information, and links to resources.",
+  description:
+    "Learn more about Vue Formik, its author, version information, and links to resources.",
   keywords: ["vue-formik", "about", "author", "version"],
 });
 </script>
@@ -70,7 +71,11 @@ useSEO({
       <li><strong>Email:</strong> {{ author.email }}</li>
       <li>
         <strong>LinkedIn:</strong>
-        <a :href="author.linkedIn" class="text-[var(--color-primary)] hover:underline" target="_blank">
+        <a
+          :href="author.linkedIn"
+          class="text-[var(--color-primary)] hover:underline"
+          target="_blank"
+        >
           Kiran Parajuli
         </a>
       </li>
@@ -95,4 +100,3 @@ useSEO({
     </div>
   </div>
 </template>
-

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
 
   // Enable SSR for all pages
@@ -9,60 +9,56 @@ export default defineNuxtConfig({
   // App configuration
   app: {
     head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      title: 'Vue Formik - Making Forms a Breeze',
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      title: "Vue Formik - Making Forms a Breeze",
       meta: [
         {
-          name: 'description',
-          content: 'Vue Formik is a form library for Vue.js that helps you build forms with ease. Battle-tested, easy to use, and flexible.',
+          name: "description",
+          content:
+            "Vue Formik is a form library for Vue.js that helps you build forms with ease. Battle-tested, easy to use, and flexible.",
         },
         {
-          property: 'og:type',
-          content: 'website',
+          property: "og:type",
+          content: "website",
         },
         {
-          property: 'og:site_name',
-          content: 'Vue Formik',
+          property: "og:site_name",
+          content: "Vue Formik",
         },
         {
-          name: 'twitter:card',
-          content: 'summary_large_image',
+          name: "twitter:card",
+          content: "summary_large_image",
         },
         {
-          name: 'twitter:site',
-          content: '@vueformik',
+          name: "twitter:site",
+          content: "@vueformik",
         },
       ],
       link: [
         {
-          rel: 'icon',
-          type: 'image/png',
-          href: '/logo.png',
+          rel: "icon",
+          type: "image/png",
+          href: "/logo.png",
         },
       ],
     },
   },
 
   // CSS configuration
-  css: [
-    '@/assets/styles/tailwind.css',
-  ],
+  css: ["@/assets/styles/tailwind.css"],
 
   // Modules
-  modules: [
-    '@nuxt/fonts',
-    'shadcn-nuxt',
-  ],
+  modules: ["@nuxt/fonts", "shadcn-nuxt"],
 
   // Nuxt Fonts configuration
   fonts: {
     families: [
       {
-        name: 'Merriweather',
-        provider: 'google',
+        name: "Merriweather",
+        provider: "google",
         weights: [300, 400, 700, 900],
-        styles: ['normal', 'italic'],
+        styles: ["normal", "italic"],
       },
     ],
   },
@@ -72,18 +68,18 @@ export default defineNuxtConfig({
     /**
      * Prefix for all the imported component
      */
-    prefix: '',
+    prefix: "",
     /**
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './app/components/ui',
+    componentDir: "./app/components/ui",
   },
 
   // PostCSS configuration for Tailwind CSS v4
   postcss: {
     plugins: {
-      '@tailwindcss/postcss': {},
+      "@tailwindcss/postcss": {},
     },
   },
 
@@ -94,14 +90,14 @@ export default defineNuxtConfig({
   },
 
   // Directory structure
-  srcDir: 'app',
+  srcDir: "app",
 
   // Auto-imports configuration
   imports: {
     presets: [
       {
-        from: '@iconify/vue',
-        imports: ['Icon'],
+        from: "@iconify/vue",
+        imports: ["Icon"],
       },
     ],
   },
@@ -109,9 +105,8 @@ export default defineNuxtConfig({
   // Runtime config for SEO
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://vue-formik.netlify.app',
-      siteName: 'Vue Formik',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://vue-formik.netlify.app",
+      siteName: "Vue Formik",
     },
   },
-})
-
+});

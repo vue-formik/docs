@@ -19,7 +19,8 @@ definePageMeta({
 
 useSEO({
   title: "useFieldArray - Vue Formik",
-  description: "Learn how to use the useFieldArray composable to manage dynamic arrays of fields in Vue Formik forms.",
+  description:
+    "Learn how to use the useFieldArray composable to manage dynamic arrays of fields in Vue Formik forms.",
   keywords: ["vue-formik", "useFieldArray", "composable", "arrays", "dynamic forms"],
 });
 </script>
@@ -61,4 +62,3 @@ useSEO({
     </section>
   </section>
 </template>
-

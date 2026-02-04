@@ -85,7 +85,6 @@ const appBarHeight = computed(() => {
 <style>
 @reference "tailwindcss";
 
-
 @media (min-width: 1400px) {
   .the-sidebar {
     @apply w-[460px];
@@ -144,4 +143,3 @@ const appBarHeight = computed(() => {
   }
 }
 </style>
-

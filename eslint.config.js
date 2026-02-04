@@ -12,7 +12,14 @@ export default [
 
   {
     name: "app/files-to-ignore",
-    ignores: ["**/dist/**", "**/dist-ssr/**", "**/coverage/**"],
+    ignores: [
+      "**/dist/**",
+      "**/dist-ssr/**",
+      "**/coverage/**",
+      "**/.nuxt/**",
+      "**/.output/**",
+      "tailwind.config.js",
+    ],
   },
 
   ...pluginVue.configs["flat/recommended"],
@@ -30,6 +37,8 @@ export default [
   skipFormatting,
   {
     rules: {
+      "vue/multi-word-component-names": "off",
+      "vue/require-default-prop": "off",
       "vue/no-console": ["error", { allow: ["warn", "error"] }],
       "vue/eqeqeq": "error",
       "vue/no-unused-emit-declarations": "error",

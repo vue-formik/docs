@@ -13,7 +13,8 @@ definePageMeta({
 
 useSEO({
   title: "useFormik - Vue Formik",
-  description: "Learn how to use the useFormik composable to manage form state, validation, and submission in Vue.js applications.",
+  description:
+    "Learn how to use the useFormik composable to manage form state, validation, and submission in Vue.js applications.",
   keywords: ["vue-formik", "useFormik", "composable", "forms", "validation"],
 });
 </script>
@@ -37,4 +38,3 @@ code {
   @apply text-red-100 border rounded px-2 py-0.5 border-red-50;
 }
 </style>
-

@@ -33,7 +33,8 @@ definePageMeta({
 
 useSEO({
   title: "FormInput - Vue Formik",
-  description: "Learn how to use the FormInput component in Vue Formik to create reusable input fields with automatic validation and error handling.",
+  description:
+    "Learn how to use the FormInput component in Vue Formik to create reusable input fields with automatic validation and error handling.",
   keywords: ["vue-formik", "FormInput", "input component", "forms", "validation"],
 });
 </script>
@@ -172,4 +173,3 @@ useSEO({
 </template>
 
 <style scoped lang="sass"></style>
-

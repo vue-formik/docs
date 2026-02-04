@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeMount, ref } from "vue";
+import { computed, ref } from "vue";
 import { Button } from "@/components/ui/button";
 import ValidationSchemaPreview from "@/components/home/ValidationSchemaPreview.vue";
 import ExpoForm from "@/components/home/ExpoForm.vue";
@@ -12,7 +12,8 @@ definePageMeta({
 
 useSEO({
   title: "Demo - Vue Formik",
-  description: "Try Vue Formik in action with our interactive demo. See how easy it is to build forms with validation.",
+  description:
+    "Try Vue Formik in action with our interactive demo. See how easy it is to build forms with validation.",
   keywords: ["vue-formik", "demo", "example", "forms", "validation"],
 });
 
@@ -108,4 +109,3 @@ const preventDefault = ref(true);
     </p>
   </section>
 </template>
-

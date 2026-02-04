@@ -20,7 +20,9 @@
     </p>
 
     <article class="my-10!">
-      <h4 title="performance" class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> Performance:</h4>
+      <h4 title="performance" class="flex items-center gap-2">
+        <Icon icon="lucide:info" class="h-5 w-5" /> Performance:
+      </h4>
       <p>
         Form validation runs deeply on every value change. To keep things snappy, optimize your
         validation schema and rules.
@@ -29,5 +31,4 @@
   </section>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

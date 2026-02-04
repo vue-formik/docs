@@ -28,7 +28,8 @@ definePageMeta({
 
 useSEO({
   title: "FormTextarea - Vue Formik",
-  description: "Learn how to use the FormTextareaField component in Vue Formik to create reusable textarea fields with automatic validation.",
+  description:
+    "Learn how to use the FormTextareaField component in Vue Formik to create reusable textarea fields with automatic validation.",
   keywords: ["vue-formik", "FormTextarea", "textarea component", "forms", "validation"],
 });
 </script>
@@ -138,4 +139,3 @@ useSEO({
 </template>
 
 <style scoped lang="sass"></style>
-

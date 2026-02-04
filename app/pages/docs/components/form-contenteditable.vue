@@ -31,7 +31,8 @@ definePageMeta({
 
 useSEO({
   title: "FormContentEditable - Vue Formik",
-  description: "Learn how to use the FormContentEditableField component in Vue Formik to create rich text editable fields with validation.",
+  description:
+    "Learn how to use the FormContentEditableField component in Vue Formik to create rich text editable fields with validation.",
   keywords: ["vue-formik", "FormContentEditable", "contenteditable", "rich text", "forms"],
 });
 </script>
@@ -143,4 +144,3 @@ useSEO({
 </template>
 
 <style scoped lang="sass"></style>
-

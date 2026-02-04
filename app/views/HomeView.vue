@@ -1,9 +1,7 @@
 <template>
   <section class="flex flex-col justify-center grow text-center min-h-[90vh] px-4 md:px-0">
     <header class="my-12! sm:mt-0!">
-      <h1 class="text-gradient">
-        Vue Formik: Making Forms a Breeze
-      </h1>
+      <h1 class="text-gradient">Vue Formik: Making Forms a Breeze</h1>
       <p class="text-lg">Vue Formik is a form library for Vue.js that helps you with your forms.</p>
     </header>
 

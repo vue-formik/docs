@@ -16,7 +16,9 @@
     <CodeBlock :content="AsyncValidationExample" />
 
     <article class="my-6!">
-      <h4 class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> Key Points:</h4>
+      <h4 class="flex items-center gap-2">
+        <Icon icon="lucide:info" class="h-5 w-5" /> Key Points:
+      </h4>
       <ul class="list-disc ml-6">
         <li>
           Validation functions can return <code>Promise</code> objects (async/await syntax or
@@ -41,7 +43,9 @@
     <CodeBlock :content="DebounceValidationExample" />
 
     <article class="my-6!">
-      <h4 class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> How Debouncing Works:</h4>
+      <h4 class="flex items-center gap-2">
+        <Icon icon="lucide:info" class="h-5 w-5" /> How Debouncing Works:
+      </h4>
       <ul class="list-disc ml-6">
         <li>
           <code>validationDebounce</code> sets the delay in milliseconds (default: 0 = no debounce)
@@ -64,7 +68,9 @@
     </p>
 
     <article class="my-8! border-l-4 border-blue-500 bg-blue-50/10 p-4">
-      <h4 class="flex items-center gap-2"><Icon icon="lucide:info" class="h-5 w-5" /> Performance Tip:</h4>
+      <h4 class="flex items-center gap-2">
+        <Icon icon="lucide:info" class="h-5 w-5" /> Performance Tip:
+      </h4>
       <p>
         For forms with heavy validation logic or API calls, always use debouncing with
         <code>validateOnChange</code>. The recommended debounce time is between 200-500ms depending

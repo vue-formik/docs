@@ -79,7 +79,8 @@ definePageMeta({
 
 useSEO({
   title: "Quick Start - Vue Formik",
-  description: "Get started with Vue Formik in minutes. Learn how to install and use Vue Formik in your Vue.js projects.",
+  description:
+    "Get started with Vue Formik in minutes. Learn how to install and use Vue Formik in your Vue.js projects.",
   keywords: ["vue-formik", "quick start", "installation", "vue", "forms"],
 });
 
@@ -93,4 +94,3 @@ const activeTab = ref<keyof iC>("npm");
 </script>
 
 <style scoped></style>
-
