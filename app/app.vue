@@ -1,4 +1,14 @@
 <template>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      :src="`https://www.googletagmanager.com/ns.html?id=${gtmId}`"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+      title="Google Tag Manager"
+    />
+  </noscript>
   <TheAppbar ref="appBarRef" :toggle-sidebar="toggleSidebar" :is-expanded="sidebarState" />
   <TheSidebar
     v-if="showSidebar || screenWidth < 640"
@@ -33,11 +43,8 @@ import TheAppbar from "@/components/TheAppbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheSidebar from "@/components/TheSidebar.vue";
 
-// Google Tag Manager (Nuxt Scripts) - loads in production; noop in dev/SSR
-const { proxy } = useScriptGoogleTagManager();
-useScriptEventPage(({ title, path }) => {
-  proxy.dataLayer.push({ event: "pageview", title, path });
-});
+const { public: publicConfig } = useRuntimeConfig();
+const gtmId = publicConfig.gtmId;
 
 const route = useRoute();
 

@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const GTM_ID = "GTM-PPQ53DQD";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -12,6 +14,18 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "Vue Formik - Making Forms a Breeze",
+      script: [
+        {
+          key: "gtm",
+          innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`,
+          type: "text/javascript",
+          tagPosition: "head",
+        },
+      ],
       meta: [
         {
           name: "description",
@@ -49,16 +63,7 @@ export default defineNuxtConfig({
   css: ["@/assets/styles/tailwind.css"],
 
   // Modules
-  modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/scripts"],
-
-  // Nuxt Scripts - Google Tag Manager
-  scripts: {
-    registry: {
-      googleTagManager: {
-        id: "GTM-PPQ53DQD",
-      },
-    },
-  },
+  modules: ["@nuxt/fonts", "shadcn-nuxt"],
 
   // Nuxt Fonts configuration
   fonts: {
@@ -111,9 +116,10 @@ export default defineNuxtConfig({
     ],
   },
 
-  // Runtime config for SEO
+  // Runtime config for SEO and GTM
   runtimeConfig: {
     public: {
+      gtmId: GTM_ID,
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://vue-formik.netlify.app",
       siteName: "Vue Formik",
     },
