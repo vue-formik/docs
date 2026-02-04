@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const GTM_ID = "GTM-PPQ53DQD";
+import { GTM_ID } from "./app/constants/gtm";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
