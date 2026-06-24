@@ -40,7 +40,7 @@ importers:
         version: 1.0.7(tailwindcss@4.1.18)
       vue-formik:
         specifier: latest
-        version: 0.2.3(vue@3.5.26(typescript@5.9.3))
+        version: 0.3.0(vue@3.5.26(typescript@5.9.3))
       yup:
         specifier: latest
         version: 1.7.1
@@ -4901,8 +4901,8 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
 
-  vue-formik@0.2.3:
-    resolution: {integrity: sha512-7IUBRQtj1jJACcBXCm180Gzt/3RteoUyXa5+DT2hl6atxWmfqe4wjd9Yfmh/aZF2xFa9A15LuH7RbA927SAqTQ==}
+  vue-formik@0.3.0:
+    resolution: {integrity: sha512-ayupNrGd8Tb8391h58LGtJxCE2IgTgoJh1ETZw0RtJtW6l/MNBoL/dtVVn4kvMP481xiPR6lWnYlcn9yKh0L/Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       vue: ^3.0.0
@@ -10229,7 +10229,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-formik@0.2.3(vue@3.5.26(typescript@5.9.3)):
+  vue-formik@0.3.0(vue@3.5.26(typescript@5.9.3)):
     dependencies:
       vue: 3.5.26(typescript@5.9.3)
 

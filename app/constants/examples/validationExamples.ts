@@ -166,3 +166,60 @@ const formik = useFormik({
 // - isValidating flag shows loading state
 // - Only validates after user stops typing
 `;
+
+export const StandardSchemaZodExample = `
+import { useFormik } from "vue-formik";
+import { z } from "zod"; // zod v3.24+ / v4 implements Standard Schema
+
+const schema = z.object({
+  email: z.string().email("Invalid email"),
+  password: z.string().min(8, "At least 8 characters"),
+});
+
+const formik = useFormik({
+  initialValues: { email: "", password: "" },
+  // One option for the whole Standard Schema ecosystem
+  standardSchema: schema,
+  onSubmit: (values) => console.log(values),
+});
+`;
+
+export const StandardSchemaValibotExample = `
+import { useFormik } from "vue-formik";
+import * as v from "valibot";
+
+const schema = v.object({
+  email: v.pipe(v.string(), v.email("Invalid email")),
+  age: v.pipe(v.number(), v.minValue(18, "Must be 18+")),
+});
+
+const formik = useFormik({
+  initialValues: { email: "", age: 0 },
+  standardSchema: schema,
+});
+`;
+
+export const StandardSchemaCustomExample = `
+import type { StandardSchemaV1 } from "vue-formik";
+
+// Standard Schema is just an interface — you can implement it by hand,
+// no schema library required.
+const schema: StandardSchemaV1<{ name: string }> = {
+  "~standard": {
+    version: 1,
+    vendor: "custom",
+    validate(value) {
+      const v = value as { name: string };
+      if (!v.name) {
+        return { issues: [{ message: "Name is required", path: ["name"] }] };
+      }
+      return { value: v };
+    },
+  },
+};
+
+const formik = useFormik({
+  initialValues: { name: "" },
+  standardSchema: schema,
+});
+`;
