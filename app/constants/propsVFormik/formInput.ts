@@ -27,6 +27,12 @@ export const FormInputProps = [
     description:
       "Additional props to pass to the input field, such as attributes like 'min', 'max', 'step', etc.",
   },
+  {
+    name: "validation",
+    type: "InputValidationRule",
+    description:
+      "Optional field-level validation rule (value, values?) => string | string[] | undefined. It is registered with the form, runs alongside schema validation, and takes precedence for this field.",
+  },
 ] as IRow[];
 
 export const FormInputSlotCols = [

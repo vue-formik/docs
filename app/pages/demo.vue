@@ -92,7 +92,7 @@ const preventDefault = ref(true);
         />
       </template>
 
-      <ValidationSchemaPreview />
+      <ValidationSchemaPreview :value="tab" />
     </div>
 
     <p class="py-2 text-sm">

@@ -87,6 +87,14 @@ export const UseFormikParameters = [
     description: "A superstruct schema for validating the form fields.",
   },
   {
+    name: "standardSchema",
+    type: "StandardSchemaV1<T>",
+    required: false,
+    default: "-",
+    description:
+      "Any Standard Schema (https://standardschema.dev) — Zod, Valibot, ArkType, etc. A single option that validates against the whole modern schema ecosystem via the schema's `~standard` interface.",
+  },
+  {
     name: "validationSchema",
     type: "FormikValidationSchema<T>",
     required: false,
@@ -197,13 +205,25 @@ export const UseFormikReturnedMethods = [
   },
   {
     name: "setFieldValue",
-    parameters: "(field: string, value: unknown)",
-    description: "Updates the value of a specific field.",
+    parameters: "<K extends NestedPaths<T>>(field: K, value: NestedValue<T, K>)",
+    description:
+      "Updates the value of a specific field. The path and value are fully typed — autocompletes nested and array paths (e.g. `address.city`, `tags[0]`) and enforces the value type at that path.",
   },
   {
     name: "setFieldTouched",
-    parameters: "(field: string, touchedValue: boolean)",
-    description: "Marks a specific field as touched.",
+    parameters: "<K extends NestedPaths<T>>(field: K, touchedValue?: boolean)",
+    description: "Marks a specific (typed) field path as touched.",
+  },
+  {
+    name: "registerFieldValidation",
+    parameters: "(field: string, rule: InputValidationRule)",
+    description:
+      "Registers a field-level validation rule. It runs alongside schema validation and takes precedence for its own field. Used by FormInput's `validation` prop and useField.",
+  },
+  {
+    name: "unregisterFieldValidation",
+    parameters: "(field: string)",
+    description: "Removes a previously registered field-level validation rule.",
   },
   {
     name: "setSubmitting",
@@ -238,8 +258,9 @@ export const UseFormikReturnedMethods = [
   },
   {
     name: "getFieldValue",
-    parameters: "(field: string): unknown",
-    description: "Retrieves the current value of a specific field.",
+    parameters: "<K extends NestedPaths<T>>(field: K): NestedValue<T, K> | undefined",
+    description:
+      "Retrieves the current value of a specific field, typed to the value at that path.",
   },
   {
     name: "getFieldTouched",

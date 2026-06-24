@@ -150,6 +150,7 @@ const opts = computed(() => ({
   joiSchema: props.value === DemoTabValues.JOI ? props.validationSchema : undefined,
   zodSchema: props.value === DemoTabValues.ZOD ? props.validationSchema : undefined,
   structSchema: props.value === DemoTabValues.SUPERSTRUCT ? props.validationSchema : undefined,
+  standardSchema: props.value === DemoTabValues.STANDARD ? props.validationSchema : undefined,
   validateOnMount: props.validateOnMount,
   validateOnChange: props.validateOnChange,
   validateOnBlur: props.validateOnBlur,

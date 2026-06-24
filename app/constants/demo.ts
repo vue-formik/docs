@@ -9,6 +9,7 @@ export const DemoTabValues = {
   JOI: 2,
   ZOD: 3,
   SUPERSTRUCT: 4,
+  STANDARD: 5,
 };
 
 interface IContact {
@@ -238,10 +239,16 @@ export const ValidationSchemaSuperstruct = object({
   addresses: size(array(addressPattern), 1),
 });
 
+// Standard Schema (https://standardschema.dev) is a shared interface implemented by
+// Zod, Valibot, ArkType, etc. Here we reuse the Zod schema, but pass it through the
+// universal `standardSchema` option instead of the Zod-specific `zodSchema` option.
+export const ValidationSchemaStandard = ValidationSchemaZod;
+
 export const DemoTabs = [
   { name: "Custom", value: DemoTabValues.CUSTOM, schema: ValidationSchema },
   { name: "Yup", value: DemoTabValues.YUP, schema: ValidationSchemaYup },
   { name: "Joi", value: DemoTabValues.JOI, schema: ValidationSchemaJoi },
   { name: "Zod", value: DemoTabValues.ZOD, schema: ValidationSchemaZod },
   { name: "Superstruct", value: DemoTabValues.SUPERSTRUCT, schema: ValidationSchemaSuperstruct },
+  { name: "Standard Schema", value: DemoTabValues.STANDARD, schema: ValidationSchemaStandard },
 ];

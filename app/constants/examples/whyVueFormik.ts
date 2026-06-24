@@ -124,6 +124,49 @@ const handleEmailInput = () => {
 </template>
 `;
 
+export const TypeSafetyExample = `
+import { useFormik } from 'vue-formik'
+
+const form = useFormik({
+  initialValues: {
+    name: '',
+    address: { city: '' },
+    tags: [] as string[],
+  },
+})
+
+// Paths AND values are inferred — incl. nested + array indices
+form.setFieldValue('address.city', 'Kathmandu') // ✅
+form.setFieldValue('tags[0]', 'vue')            // ✅
+form.setFieldValue('name', 123)                 // ❌ expected string
+form.setFieldValue('nope', 'x')                 // ❌ not a valid path
+
+const city = form.getFieldValue('address.city') // string | undefined
+`;
+
+export const StandardSchemaExample = `
+import { useFormik } from 'vue-formik'
+import * as v from 'valibot' // or zod, arktype, …
+
+// One option for the whole Standard Schema ecosystem
+const form = useFormik({
+  initialValues: { email: '' },
+  standardSchema: v.object({
+    email: v.pipe(v.string(), v.email('Invalid email')),
+  }),
+})
+`;
+
+export const UseFieldExample = `
+import { useField } from 'vue-formik'
+
+// Bind ANY input (your own or a UI library's) to form state — no bundled component
+const { value, error, hasError, onInput, onBlur, attrs } = useField('email')
+
+// e.g. with a third-party text field:
+// <UiTextField v-bind="attrs" :model-value="value" @update:model-value="value = $event" />
+`;
+
 export const WithFormikExample = `
 <script setup>
 import { useFormik } from 'vue-formik'

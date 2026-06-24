@@ -11,7 +11,18 @@ const formik = useFormik({
     ],
   },
 });
-const { push, pop } = useFieldArray(formik);`;
+const { push, pop, insert, remove, move, swap, replace } = useFieldArray(formik);`;
+
+const OpsExample = `const fa = useFieldArray(formik);
+
+fa.push('users', { name: 'Cara', age: 22 });   // append
+fa.push('users', { name: 'Dan', age: 41 }, 1);  // insert at index (same as insert)
+fa.insert('users', 0, { name: 'Eve', age: 33 }); // insert at index 0
+fa.remove('users', 2);                           // remove at index 2
+fa.move('users', 0, 3);                          // move item 0 -> 3
+fa.swap('users', 1, 4);                          // swap items 1 and 4
+fa.replace('users', 0, { name: 'Updated', age: 50 });
+fa.pop('users');                                 // remove last`;
 
 definePageMeta({
   sidebar: true,
@@ -58,7 +69,50 @@ useSEO({
 
     <section>
       <h2 class="mb-4!">📚 API</h2>
-      <!-- Add API documentation here -->
+
+      <p class="mb-2">
+        The composable returns the following array-manipulation helpers. All of them read and write
+        through the formik instance immutably (the array is cloned before mutation), and
+        out-of-bounds indices log a warning and no-op.
+      </p>
+
+      <CodeBlock :content="OpsExample" />
+
+      <h3>
+        push <code class="text-sm!">(field: string, value: unknown, index?: number)</code>
+      </h3>
+      <p class="mb-2">
+        Appends <code>value</code> to the array. If <code>index</code> is given, inserts at that
+        index instead.
+      </p>
+
+      <h3>pop <code class="text-sm!">(field: string, index?: number)</code></h3>
+      <p class="mb-2">
+        Removes the last item, or the item at <code>index</code> when provided.
+      </p>
+
+      <h3>insert <code class="text-sm!">(field: string, index: number, value: unknown)</code></h3>
+      <p class="mb-2">Inserts <code>value</code> at <code>index</code>, shifting later items right.</p>
+
+      <h3>remove <code class="text-sm!">(field: string, index: number)</code></h3>
+      <p class="mb-2">Removes the item at <code>index</code>, shifting later items left.</p>
+
+      <h3>move <code class="text-sm!">(field: string, from: number, to: number)</code></h3>
+      <p class="mb-2">Moves an item from one index to another.</p>
+
+      <h3>swap <code class="text-sm!">(field: string, indexA: number, indexB: number)</code></h3>
+      <p class="mb-2">Swaps the items at two indices.</p>
+
+      <h3>replace <code class="text-sm!">(field: string, index: number, value: unknown)</code></h3>
+      <p class="mb-2">Replaces the item at <code>index</code> with a new value.</p>
+
+      <blockquote>
+        <p class="font-semibold">Note: Out of Bounds</p>
+        <p>
+          If an index is out of bounds, the function logs a warning to the console and makes no
+          change.
+        </p>
+      </blockquote>
     </section>
   </section>
 </template>

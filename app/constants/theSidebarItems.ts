@@ -14,6 +14,7 @@ export default [
     name: "Composable",
     children: [
       { name: "useFormik", path: "/docs/composable/use-formik" },
+      { name: "useField", path: "/docs/composable/use-field" },
       { name: "useFieldArray", path: "/docs/composable/use-field-array" },
     ],
   },
