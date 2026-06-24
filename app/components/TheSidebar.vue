@@ -8,10 +8,9 @@
     aria-label="Main navigation"
   >
     <Button
-      v-if="isMobile"
       variant="ghost"
       size="sm"
-      class="absolute top-1 right-1 text-xs"
+      class="the-sidebar__close absolute top-1 right-1 text-xs"
       title="Close Sidebar"
       @click="toggleSidebar"
     >
@@ -67,6 +66,14 @@ defineProps<{
 .the-sidebar {
   @apply pt-4 relative;
   border-right: 1px solid var(--color-surface-b);
+}
+
+/* Close button is only relevant for the mobile slide-in sidebar.
+   Hide on desktop via CSS so it never flashes during hydration. */
+@media (min-width: 780px) {
+  .the-sidebar__close {
+    display: none;
+  }
 }
 
 .the-sidebar ul li {

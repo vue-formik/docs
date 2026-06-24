@@ -34,6 +34,8 @@
     "zod": "latest"
   },
   "devDependencies": {
+    "@nuxtjs/robots": "^6.1.1",
+    "@nuxtjs/sitemap": "^8.2.1",
     "@nuxtjs/tailwindcss": "latest",
     "@playwright/test": "latest",
     "@tailwindcss/postcss": "latest",

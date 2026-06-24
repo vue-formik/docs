@@ -14,6 +14,11 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "Vue Formik - Making Forms a Breeze",
+      // lang for SEO; dark class server-side to avoid a theme flash on load
+      htmlAttrs: {
+        lang: "en",
+        class: "dark",
+      },
       script: [
         {
           key: "gtm",
@@ -63,7 +68,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   css: ["@/assets/styles/tailwind.css"],
 
   // Modules
-  modules: ["@nuxt/fonts", "shadcn-nuxt"],
+  modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+
+  // Site config consumed by @nuxtjs/sitemap and @nuxtjs/robots
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://vue-formik.netlify.app",
+    name: "Vue Formik",
+  },
 
   // Nuxt Fonts configuration
   fonts: {

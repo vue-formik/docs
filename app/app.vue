@@ -1,9 +1,9 @@
 <template>
   <TheAppbar ref="appBarRef" :toggle-sidebar="toggleSidebar" :is-expanded="sidebarState" />
   <TheSidebar
-    v-if="showSidebar || screenWidth < 640"
     :class="{
       show: sidebarState,
+      'the-sidebar--mobile-only': !showSidebar,
     }"
     :toggle-sidebar="closeSidebar"
     :is-mobile="screenWidth < 780"
@@ -55,9 +55,6 @@ const closeSidebar = () => {
 const screenWidth = ref(0);
 onMounted(() => {
   if (process.client) {
-    // Set dark mode as default
-    document.documentElement.classList.add("dark");
-
     screenWidth.value = window.innerWidth;
     window.addEventListener("resize", () => {
       screenWidth.value = window.innerWidth;
@@ -99,6 +96,11 @@ const appBarHeight = computed(() => {
   }
   .the-sidebar > ul {
     @apply w-[230px];
+  }
+  /* Pages without a docs sidebar keep it as the mobile-only slide-in nav;
+     hide it on desktop from the first paint to avoid a hydration flash. */
+  .the-sidebar.the-sidebar--mobile-only {
+    display: none;
   }
 }
 

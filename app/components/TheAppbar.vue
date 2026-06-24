@@ -25,6 +25,7 @@ const ariaExpanded = computed(() => props.isExpanded?.toString() ?? "false");
       </Button>
       <h1><NuxtLink to="/" class="no-underline!">Vue Formik</NuxtLink></h1>
       <div class="grow hidden sm:block" />
+      <NuxtLink class="hidden sm:block" to="/getting-started/introduction">Introduction</NuxtLink>
       <NuxtLink class="hidden sm:block" to="/about">About</NuxtLink>
       <NuxtLink class="hidden sm:block" to="/demo">Demo</NuxtLink>
       <a class="hidden sm:block" href="https://github.com/vue-formik/vue-formik" target="_blank">
